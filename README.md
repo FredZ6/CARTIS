@@ -222,6 +222,5 @@ PSP、NDS 等平台分别添加一次。建好文件夹并不等于已经添加�
 
 文件夹名字、封面命名和权限不正确时，不需要靠卸载 Socket 或清空全部数据解决。
 
-## 许可证
 
-本仓库的原创教程文字和三张原创 SVG 图解采用 [MIT 许可证](LICENSE)。**该许可不涵盖 APK、原版 Socket、界面截图中的第三方内容及第三方模型等素材。** 原版 Socket 由 [depmots](https://depmots.com/socket) 开发；各部分的授权范围请见 [许可证说明](LICENSING.md)。
+
