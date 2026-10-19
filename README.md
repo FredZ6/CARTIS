@@ -2,6 +2,8 @@
 
 目前的版本尚未完全开发完毕，后续开发完成后会继续更新。如果喜欢的话，请多多支持！（安装好 Socket 后，可以在设置里找到神秘支持按钮哦。）
 
+海外用户也可以通过 PayPal 支持开发：[💙 PayPal 打赏](https://paypal.me/seabird26)。
+
 ![Socket BBM 卡带主界面](docs/images/main-menu.png)
 
 ![Socket BBM 游戏平台选择界面](docs/images/platform-chooser.png)
