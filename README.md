@@ -1,5 +1,11 @@
 # Socket BBM
 
+目前的版本尚未完全开发完毕，后续开发完成后会继续更新。如果喜欢的话，请多多支持！（安装好 Socket 后，可以在设置里找到神秘支持按钮哦。）
+
+![Socket BBM 卡带主界面](docs/images/main-menu.png)
+
+![Socket BBM 游戏平台选择界面](docs/images/platform-chooser.png)
+
 面向 KPB 等安卓掌机的游戏前端，使用 3D 卡带和主机模型浏览游戏。游戏通过单独安装的模拟器运行。
 
 ## 安装说明
