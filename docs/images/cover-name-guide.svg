@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img" aria-label="封面和游戏文件如何对应命名">
+<rect width="100%" height="100%" rx="24" fill="#f3f4f6"/>
+<g font-family="Arial, Noto Sans CJK SC, Microsoft YaHei, sans-serif" fill="#17191b">
+<text x="40" y="65" font-size="36" fill="#17191b" font-weight="bold">封面能不能匹配，先看文件名</text>
+<text x="40" y="110" font-size="26" fill="#555d62" font-weight="normal">两边的名字相同，最后的文件格式不同。</text>
+<rect x="40" y="150" width="920" height="150" rx="16" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/>
+<text x="65" y="195" font-size="26" fill="#047857" font-weight="bold">正确</text>
+<text x="65" y="240" font-size="30" fill="#17191b" font-weight="normal">游戏：口袋妖怪 水银.gba</text>
+<text x="65" y="280" font-size="30" fill="#17191b" font-weight="normal">封面：口袋妖怪 水银.png</text>
+<rect x="40" y="330" width="920" height="150" rx="16" fill="#fff7ed" stroke="#fb923c" stroke-width="2"/>
+<text x="65" y="375" font-size="26" fill="#b45309" font-weight="bold">不要这样命名</text>
+<text x="65" y="420" font-size="30" fill="#17191b" font-weight="normal">游戏：口袋妖怪 水银.gba</text>
+<text x="65" y="460" font-size="28" fill="#17191b" font-weight="normal">封面：封面1.png  ← 名字不同，不能按同名匹配</text>
+<text x="40" y="535" font-size="27" fill="#17191b" font-weight="normal">建议用 PNG 或 JPG；不要把 .jpg 直接改成 .png。</text>
+<text x="40" y="580" font-size="24" fill="#555d62" font-weight="normal">按原来的游戏文件名配图，不要只看界面里改过的显示名称。</text>
+</g></svg>

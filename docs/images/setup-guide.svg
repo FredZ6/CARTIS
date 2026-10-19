@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1020" viewBox="0 0 1000 1020" role="img" aria-label="添加平台和修改按键的操作步骤示意">
+<rect width="100%" height="100%" rx="24" fill="#f3f4f6"/>
+<g font-family="Arial, Noto Sans CJK SC, Microsoft YaHei, sans-serif" fill="#17191b">
+<text x="40" y="65" font-size="36" fill="#17191b" font-weight="bold">在 Socket 里怎么操作？</text>
+<text x="40" y="108" font-size="24" fill="#555d62" font-weight="normal">操作流程示意：实际页面样式以掌机为准。</text>
+<text x="40" y="165" font-size="30" fill="#17191b" font-weight="bold">添加游戏：先拿 GBA 平台试一次</text>
+<rect x="40" y="195" width="920" height="105" rx="16" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+<text x="65" y="237" font-size="29" fill="#17191b" font-weight="bold">1  主界面按 Y，进入设置</text>
+<text x="65" y="275" font-size="24" fill="#555d62" font-weight="normal">也可以触屏点左下角“设置”。</text>
+<rect x="40" y="323" width="920" height="105" rx="16" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+<text x="65" y="365" font-size="29" fill="#17191b" font-weight="bold">2  点“平台”，再点“添加平台”</text>
+<text x="65" y="403" font-size="24" fill="#555d62" font-weight="normal">选择 GBA 和你已经安装好的模拟器。</text>
+<rect x="40" y="451" width="920" height="105" rx="16" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+<text x="65" y="493" font-size="29" fill="#17191b" font-weight="bold">3  选择 天马游戏包 / GBA</text>
+<text x="65" y="531" font-size="24" fill="#555d62" font-weight="normal">选游戏文件夹，不要选里面的 lmgs。</text>
+<rect x="40" y="579" width="920" height="105" rx="16" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+<text x="65" y="621" font-size="29" fill="#17191b" font-weight="bold">4  允许读取，保存并等待扫描</text>
+<text x="65" y="659" font-size="24" fill="#555d62" font-weight="normal">扫描完成后回主界面查看游戏和封面。</text>
+<text x="40" y="760" font-size="30" fill="#17191b" font-weight="bold">修改按键：以“所有合集”为例</text>
+<rect x="40" y="790" width="920" height="175" rx="16" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<text x="65" y="833" font-size="29" fill="#17191b" font-weight="bold">设置 → 按键 → 所有合集</text>
+<text x="65" y="882" font-size="28" fill="#17191b" font-weight="normal">按想绑定的实体键 → 全部松开 → 保存绑定</text>
+<text x="65" y="929" font-size="24" fill="#1d4ed8" font-weight="normal">如果提示按键冲突，可取消重选，或明确选择替换。</text>
+</g></svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="880" viewBox="0 0 1000 880" role="img" aria-label="游戏和封面的文件夹应该怎么放">
+<rect width="100%" height="100%" rx="24" fill="#f3f4f6"/>
+<g font-family="Arial, Noto Sans CJK SC, Microsoft YaHei, sans-serif" fill="#17191b">
+<text x="40" y="65" font-size="36" fill="#17191b" font-weight="bold">游戏和封面放在哪里？</text>
+<text x="40" y="110" font-size="24" fill="#555d62" font-weight="normal">以 GBA 为例：图中是整理示意，不是文件管理器截图。</text>
+<rect x="40" y="145" width="920" height="95" rx="16" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+<text x="70" y="187" font-size="30" fill="#17191b" font-weight="bold">内部存储 / 天马游戏包 / GBA</text>
+<text x="70" y="220" font-size="25" fill="#1d4ed8" font-weight="normal">添加 GBA 平台时，选这个文件夹</text>
+<path d="M85 240 V690 M85 305 H125 M85 405 H125 M85 515 H125" fill="none" stroke="#9ca3af" stroke-width="3"/>
+<rect x="125" y="265" width="795" height="80" rx="16" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+<text x="150" y="315" font-size="28" fill="#17191b" font-weight="normal">口袋妖怪 水银.gba    ← 游戏文件</text>
+<rect x="125" y="365" width="795" height="80" rx="16" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+<text x="150" y="415" font-size="28" fill="#17191b" font-weight="normal">逆转裁判1.gba           ← 另一个游戏</text>
+<rect x="125" y="475" width="795" height="230" rx="16" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/>
+<text x="150" y="520" font-size="30" fill="#17191b" font-weight="bold">lmgs /    ← 专门放封面</text>
+<text x="185" y="580" font-size="28" fill="#17191b" font-weight="normal">口袋妖怪 水银.png</text>
+<text x="185" y="640" font-size="28" fill="#17191b" font-weight="normal">逆转裁判1.png</text>
+<text x="40" y="760" font-size="27" fill="#17191b" font-weight="bold">记住：游戏放 GBA 里，图片放 GBA 里面的 lmgs 里。</text>
+<text x="40" y="810" font-size="25" fill="#b45309" font-weight="normal">lmgs = 小写字母 l + m + g + s，不是 imgs，也不是 1mgs。</text>
+</g></svg>
