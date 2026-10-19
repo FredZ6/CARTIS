@@ -27,11 +27,93 @@ Socket 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 
 ## 第二步：先装好模拟器
 
-比如使用 RetroArch 时，除了安装 RetroArch 本体，还需要安装对应平台的“核心”。核心可以理解为“运行这一类游戏所需的组件”。
+**Socket 不会自动帮你安装模拟器或核心。** 可以把它理解成：Socket 是“游戏书架”，模拟器是“游戏机”，核心是 RetroArch 里面运行某个平台的组件。
 
-**先在模拟器里打开一个游戏，确认能玩，再回 Socket 添加平台。** 这样出问题时更容易知道是哪一步没设置好。
+### ① 我要玩什么，就装什么
 
-Socket 安装包不包含游戏、BIOS、模拟器和输入法。需要 BIOS 的平台，请按模拟器的要求单独准备。
+下面的链接是模拟器的官网或项目官方说明。打开下载页后，请选 **Android / APK**，不要下载 Windows、macOS 版本。
+
+| 想玩的游戏平台 | 可以使用的模拟器 / 核心 | 下载入口与说明 |
+| --- | --- | --- |
+| **GBA** | RetroArch ＋ **mGBA** 核心 | [RetroArch 官方下载](https://www.retroarch.com/platforms.php) · [mGBA 核心说明](https://docs.libretro.com/library/mgba/) |
+| **GB / GBC** | RetroArch ＋ **Gambatte** 核心 | [RetroArch 官方下载](https://www.retroarch.com/platforms.php) · [Gambatte 核心说明](https://docs.libretro.com/library/gambatte/) |
+| **NDS / DS** | RetroArch ＋ **melonDS DS** 核心 | [RetroArch 官方下载](https://www.retroarch.com/platforms.php) · [melonDS DS 核心说明](https://docs.libretro.com/library/melonds_ds/) |
+| **PSP** | **PPSSPP** 独立应用 | [PPSSPP 官方下载](https://www.ppsspp.org/download/)；选择 Android 下的 **APK for Android** |
+| **PS1 / PSX** | RetroArch ＋ **PCSX ReARMed** 核心 | [RetroArch 官方下载](https://www.retroarch.com/platforms.php) · [PCSX ReARMed 核心说明](https://docs.libretro.com/library/pcsx_rearmed/) |
+| **3DS** | **Azahar** 独立应用 | [Azahar 官方网站](https://azahar-emu.org/)；从官网进入下载页面，选择 Android 版本 |
+| **PS2** | 可尝试 RetroArch ＋ **Play!** 核心，或 Socket 列表中与你已装应用对应的其他 PS2 启动项 | [RetroArch 官方下载](https://www.retroarch.com/platforms.php) · [Play! 核心说明](https://docs.libretro.com/library/play/)；Play! 核心仍属实验性方案，不作为新手首选 |
+
+**不用把全部模拟器都装一遍。** 例如只玩 GBA，就先安装 RetroArch 和 mGBA；同时玩 GBA、PS1，只需安装一份 RetroArch，再分别下载两个核心。PPSSPP 这类独立模拟器则是另外安装的 APK。
+
+3DS、PS2 对设备性能和游戏兼容性的要求更高。页面有主机模型，不代表你的掌机能流畅运行该平台所有游戏；本项目尚未逐一验证上表所有方案在所有设备上的启动与性能。
+
+### ② 用 GBA 举例：安装 RetroArch 和 mGBA
+
+**A. 先安装 RetroArch 本体**
+
+1. 打开 [RetroArch 官方下载页](https://www.retroarch.com/platforms.php)，找到 **Android**。
+2. 按设备的安卓系统架构选择 APK。系统支持 64 位的掌机可选 **Download (64bit)**；32 位系统选 **Download (32bit)**。不确定时先查设备说明，不要同时装几种版本。
+3. 下载后，在掌机文件管理器中点开 APK 安装，再打开一次 RetroArch，按提示允许访问游戏目录。
+
+RetroArch 官方目前提示 Google Play 版本较旧，建议从官网下载。掌机不能直接访问官网时，可以用电脑下载 APK，再复制到掌机安装。
+
+**B. 再安装 mGBA 核心**
+
+联网后，在 RetroArch 里按这个顺序操作：
+
+```text
+主菜单 Main Menu
+  ↓
+加载核心 Load Core
+  ↓
+下载核心 Download a Core
+  ↓
+找到 Nintendo - Game Boy Advance (mGBA)
+  ↓
+点击下载，等待完成
+```
+
+有些界面也可以从 **在线更新器（Online Updater）→ 核心下载器（Core Downloader）** 进入。菜单文字会随语言和版本略有不同，可对照 [官方核心安装教程](https://docs.libretro.com/guides/download-cores/)。
+
+**mGBA 在这里是 RetroArch 内的核心，不是需要再装一次的独立安卓应用。** 上表其他 RetroArch 核心也按同样方式下载，只是要选择对应名称。
+
+**C. 先直接在 RetroArch 里试游戏**
+
+1. 回到主菜单，选择 **加载核心 → mGBA**。
+2. 选择 **加载内容（Load Content）**，找到你的 `.gba` 游戏文件并打开。
+3. 确认游戏能正常运行，再回 Socket 添加 GBA 平台。
+
+核心列表加载不出来时，先检查掌机网络和 RetroArch 下载来源；只在 Socket 里切换选项，不能代替下载缺失的核心。
+
+### ③ PSP 用户：直接安装 PPSSPP
+
+1. 打开 [PPSSPP 官方下载页](https://www.ppsspp.org/download/)，点 Android 下的 **APK for Android**，安装下载的 APK。
+2. 打开 PPSSPP，允许读取 PSP 游戏目录，先在 PPSSPP 里选择一个游戏，确认能玩。
+3. 再回 Socket 添加 PSP 平台，模拟器选择 **PPSSPP**。
+
+这里使用独立版 PPSSPP，不需要再进 RetroArch 下载 PSP 核心。PPSSPP 也有同名的 RetroArch 核心，那是另一种启动方案，设置时不要把两者混在一起。
+
+### ④ 回到 Socket，选对模拟器和核心
+
+按 **Y → 平台 → 添加平台**（已有平台则进入编辑），选择游戏目录和实际安装的模拟器。
+
+| 你实际准备好的环境 | Socket 中该选什么 |
+| --- | --- |
+| RetroArch 64 位，已下载 mGBA | 对应的 **RetroArch 64 / mGBA** 启动项 |
+| RetroArch 32 位，已下载 mGBA | 对应的 **RetroArch 32 / mGBA** 启动项 |
+| 其他包名的 RetroArch，已下载 mGBA | 与实际安装版本匹配的 **RetroArch / mGBA** 启动项 |
+| 独立版 PPSSPP | **PPSSPP** 启动项，不选 RetroArch 的 PPSSPP 核心 |
+| Azahar | 与所安装版本对应的 **Azahar** 启动项；不要仅凭名字相似选择旧 Citra / Lime3DS 启动项 |
+
+选项具体名称以当前 Socket 列表为准。**应用版本、核心和启动项要相互对应**：例如没有安装 64 位 RetroArch，却选了 RetroArch 64，可能无法打开游戏；下载了 mGBA，却选另一个尚未安装的 GBA 核心，也会启动失败。
+
+### ⑤ BIOS 和系统文件放哪里？
+
+BIOS 可以理解为某些游戏机启动所需的系统文件。**不是所有平台、所有核心都必须另外准备 BIOS**；例如 mGBA 的 GBA BIOS 是可选项。
+
+需要 BIOS 或固件时，按上表对应核心的官方说明准备，使用你有权使用的文件。RetroArch 中可在 **设置 → 目录 → 系统 / BIOS（System/BIOS）** 查看实际放置路径；不要照抄别人的存储目录。独立模拟器则按自己的设置页面操作。
+
+**最重要的一步：先在模拟器里打开游戏，确认能玩，再从 Socket 启动。** Socket 安装包不包含游戏、BIOS、模拟器和输入法，也不会自动替你安装这些组件。
 
 ## 第三步：把游戏和封面放好
 
