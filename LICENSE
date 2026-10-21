@@ -2,9 +2,12 @@ MIT License
 
 Copyright (c) 2026 FredZ6
 
-Scope: This license applies only to the original documentation text and the
-original SVG tutorial diagrams identified in LICENSING.md. It does not license
-the Socket application, APK release assets, or third-party materials.
+Scope of this MIT License
+
+This license applies only to the original documentation text and original SVG
+tutorial diagrams explicitly identified in LICENSING.md. The Socket application,
+APK release assets, and third-party materials are outside its scope and remain
+subject to their respective rights and license terms. See LICENSING.md for details.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
