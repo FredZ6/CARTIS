@@ -29,7 +29,7 @@ Socket 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 ## 第一步：安装 Socket
 
 1. 打开 [安装包下载页](https://github.com/FredZ6/kpb-socket/releases/latest)。
-2. 找到 **Assets（资源）**：通常下载 **`socket-bbm-gba-sp-interaction-20261021.apk`（最新版）**；2GB 设备出现上文所述问题时，再尝试 [**无游戏平台选择页备用版**](https://github.com/FredZ6/kpb-socket/releases/download/v2026.10.21-gbc-display-fix/socket-bbm-no-platform-chooser.apk)。`Source code` 不是安装包。
+2. 找到 **Assets（资源）**：通常下载 **`socket-bbm-sleep-pose-fix-20261022.apk`（最新版）**；2GB 设备出现上文所述问题时，再尝试 [**无游戏平台选择页备用版**](https://github.com/FredZ6/kpb-socket/releases/download/v2026.10.21-gbc-display-fix/socket-bbm-no-platform-chooser.apk)。`Source code` 不是安装包。
 3. 在掌机的文件管理器里找到 APK，点开安装。如果安卓询问是否允许安装，按提示允许。
 4. 已经装过 socket-bbm 的用户，直接覆盖安装即可。**不要先卸载，也不要点“清除数据”**，以免丢失配置。
 
