@@ -1,11 +1,13 @@
 # Socket BBM
 
 > [!IMPORTANT]
-> **2GB 内存版 KPB 用户请先看这里**
+> **2GB 内存版 KPB：建议优先开启“高帧数”模式**
 >
-> 目前这个前端是在 **3GB 内存版 KPB** 上开发和测试的。如果你的 KPB 是 **2GB 低配版**，安装最新版后发现卡顿，或内存占用过高导致黑屏、死机，请尝试安装 [**没有游戏平台选择页面的备用版本**](https://github.com/FredZ6/kpb-socket/releases/download/v2026.10.21-gbc-display-fix/socket-bbm-no-platform-chooser.apk)。
+> 安装最新版后，打开 **设置 → 性能**，将 **游戏机模型质量** 和 **游戏模型质量** 都选择为 **高帧数**。该模式会简化部分复杂材质计算，保留游戏封面和透明卡带质感，帮助改善浏览游戏和切换模型时的流畅度。
 >
-> **备用版不保证能在 2GB 设备上流畅运行。如果这个版本仍然卡顿，说明这个前端不适合你的 2GB 设备，建议改用 Beacon 或天马 G 前端。**
+> 当前主要在 **3GB 内存版 KPB** 上开发和测试，2GB 设备的实际体验会因设备和游戏库大小而不同，不保证固定帧率。
+>
+> 如果开启高帧数后仍明显卡顿，或出现内存不足、黑屏等问题，可以尝试 [**没有游戏平台选择页面的备用版本**](https://github.com/FredZ6/kpb-socket/releases/download/v2026.10.21-gbc-display-fix/socket-bbm-no-platform-chooser.apk)。如果备用版仍不流畅，也可以考虑 Beacon 或天马 G 前端。
 >
 > 备用版是较早的构建，功能以该版本为准；切换版本前请先备份自己的配置。
 
@@ -29,7 +31,7 @@ Socket 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 ## 第一步：安装 Socket
 
 1. 打开 [安装包下载页](https://github.com/FredZ6/kpb-socket/releases/latest)。
-2. 找到 **Assets（资源）**：通常下载 **`socket-bbm-performance-20261023.apk`（最新版）**；2GB 设备出现上文所述问题时，再尝试 [**无游戏平台选择页备用版**](https://github.com/FredZ6/kpb-socket/releases/download/v2026.10.21-gbc-display-fix/socket-bbm-no-platform-chooser.apk)。`Source code` 不是安装包。
+2. 找到 **Assets（资源）**：通常下载 **`socket-bbm-performance-20261023.apk`（最新版）**；2GB 设备建议先按上方说明开启高帧数模式，仍不流畅时再尝试 [**无游戏平台选择页备用版**](https://github.com/FredZ6/kpb-socket/releases/download/v2026.10.21-gbc-display-fix/socket-bbm-no-platform-chooser.apk)。`Source code` 不是安装包。
 3. 在掌机的文件管理器里找到 APK，点开安装。如果安卓询问是否允许安装，按提示允许。
 4. 已经装过 socket-bbm 的用户，直接覆盖安装即可。**不要先卸载，也不要点“清除数据”**，以免丢失配置。
 
