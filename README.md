@@ -29,7 +29,7 @@ Socket 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 ## 第一步：安装 Socket
 
 1. 打开 [安装包下载页](https://github.com/FredZ6/kpb-socket/releases/latest)。
-2. 找到 **Assets（资源）**：通常下载 **`socket-bbm-sleep-pose-fix-20261022.apk`（最新版）**；2GB 设备出现上文所述问题时，再尝试 [**无游戏平台选择页备用版**](https://github.com/FredZ6/kpb-socket/releases/download/v2026.10.21-gbc-display-fix/socket-bbm-no-platform-chooser.apk)。`Source code` 不是安装包。
+2. 找到 **Assets（资源）**：通常下载 **`socket-bbm-performance-20261023.apk`（最新版）**；2GB 设备出现上文所述问题时，再尝试 [**无游戏平台选择页备用版**](https://github.com/FredZ6/kpb-socket/releases/download/v2026.10.21-gbc-display-fix/socket-bbm-no-platform-chooser.apk)。`Source code` 不是安装包。
 3. 在掌机的文件管理器里找到 APK，点开安装。如果安卓询问是否允许安装，按提示允许。
 4. 已经装过 socket-bbm 的用户，直接覆盖安装即可。**不要先卸载，也不要点“清除数据”**，以免丢失配置。
 
@@ -200,6 +200,15 @@ PSP、NDS 等平台分别添加一次。建好文件夹并不等于已经添加�
 搜索时可以触屏打字；十字键上下选结果，A 启动。**B 先收键盘，再按一次 B 返回主界面。**
 
 点击中间的卡带或游戏机模型，可以放大；在屏幕拖动可以转着看，再点模型或按 B 退出。
+
+### 想调整画面和互动？打开“性能”
+
+打开 **设置 → 性能**，可以分别调整“游戏机模型质量”和“游戏模型质量”：
+
+- **高精细**：保留完整材质效果。
+- **高帧数**：简化部分复杂材质计算，保留封面和透明卡带质感；实际帧率会随设备、平台和场景变化。
+
+同一页还可以独立开关 **游戏机模型互动、进入卡带页面音效、卡带页面背景音**。修改后自动保存，重启后仍然生效。
 
 ### 按键不顺手？可以自己改
 
