@@ -49,13 +49,13 @@ Socket 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 
 | 想玩的游戏平台 | 可以使用的模拟器 / 核心 | 下载入口与说明 |
 | --- | --- | --- |
-| **GBA** | RetroArch ＋ **mGBA** 核心 | [RetroArch 官方下载](https://www.retroarch.com/platforms.php) · [mGBA 核心说明](https://docs.libretro.com/library/mgba/) |
-| **GB / GBC** | RetroArch ＋ **Gambatte** 核心 | [RetroArch 官方下载](https://www.retroarch.com/platforms.php) · [Gambatte 核心说明](https://docs.libretro.com/library/gambatte/) |
-| **NDS / DS** | RetroArch ＋ **melonDS DS** 核心 | [RetroArch 官方下载](https://www.retroarch.com/platforms.php) · [melonDS DS 核心说明](https://docs.libretro.com/library/melonds_ds/) |
+| **GBA** | RetroArch ＋ **mGBA** 核心 | [RetroArch 官方下载](https://buildbot.libretro.com/stable/1.22.2/android/RetroArch.apk) · [mGBA 核心说明](https://docs.libretro.com/library/mgba/) |
+| **GB / GBC** | RetroArch ＋ **Gambatte** 核心 | [RetroArch 官方下载](https://buildbot.libretro.com/stable/1.22.2/android/RetroArch.apk) · [Gambatte 核心说明](https://docs.libretro.com/library/gambatte/) |
+| **NDS / DS** | RetroArch ＋ **melonDS DS** 核心 | [RetroArch 官方下载](https://buildbot.libretro.com/stable/1.22.2/android/RetroArch.apk) · [melonDS DS 核心说明](https://docs.libretro.com/library/melonds_ds/) |
 | **PSP** | **PPSSPP** 独立应用 | [PPSSPP 官方下载](https://www.ppsspp.org/download/)；选择 Android 下的 **APK for Android** |
-| **PS1 / PSX** | RetroArch ＋ **PCSX ReARMed** 核心 | [RetroArch 官方下载](https://www.retroarch.com/platforms.php) · [PCSX ReARMed 核心说明](https://docs.libretro.com/library/pcsx_rearmed/) |
+| **PS1 / PSX** | RetroArch ＋ **PCSX ReARMed** 核心 | [RetroArch 官方下载](https://buildbot.libretro.com/stable/1.22.2/android/RetroArch.apk) · [PCSX ReARMed 核心说明](https://docs.libretro.com/library/pcsx_rearmed/) |
 | **3DS** | **Azahar** 独立应用 | [Azahar 官方网站](https://azahar-emu.org/)；从官网进入下载页面，选择 Android 版本 |
-| **PS2** | 可尝试 RetroArch ＋ **Play!** 核心，或 Socket 列表中与你已装应用对应的其他 PS2 启动项 | [RetroArch 官方下载](https://www.retroarch.com/platforms.php) · [Play! 核心说明](https://docs.libretro.com/library/play/)；Play! 核心仍属实验性方案，不作为新手首选 |
+| **PS2** | 可尝试 RetroArch ＋ **Play!** 核心，或 Socket 列表中与你已装应用对应的其他 PS2 启动项 | [RetroArch 官方下载](https://buildbot.libretro.com/stable/1.22.2/android/RetroArch.apk) · [Play! 核心说明](https://docs.libretro.com/library/play/)；Play! 核心仍属实验性方案，不作为新手首选 |
 
 **不用把全部模拟器都装一遍。** 例如只玩 GBA，就先安装 RetroArch 和 mGBA；同时玩 GBA、PS1，只需安装一份 RetroArch，再分别下载两个核心。PPSSPP 这类独立模拟器则是另外安装的 APK。
 
@@ -65,7 +65,7 @@ Socket 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 
 **A. 先安装 RetroArch 本体**
 
-1. 打开 [RetroArch 官方下载页](https://www.retroarch.com/platforms.php)，找到 **Android**。
+1. 打开 [RetroArch 官方下载页](https://buildbot.libretro.com/stable/1.22.2/android/RetroArch.apk)，找到 **Android**。
 2. 按设备的安卓系统架构选择 APK。系统支持 64 位的掌机可选 **Download (64bit)**；32 位系统选 **Download (32bit)**。不确定时先查设备说明，不要同时装几种版本。
 3. 下载后，在掌机文件管理器中点开 APK 安装，再打开一次 RetroArch，按提示允许访问游戏目录。
 
