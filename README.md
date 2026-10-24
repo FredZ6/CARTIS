@@ -1,11 +1,13 @@
 # Socket BBM
 
 > [!IMPORTANT]
-> **2GB 内存版 KPB：建议优先开启“高帧数”模式**
+> **2GB 内存版 KPB：请先阅读本版内存说明**
 >
 > 安装最新版后，打开 **设置 → 性能**，将 **游戏机模型质量** 和 **游戏模型质量** 都选择为 **高帧数**。该模式会简化部分复杂材质计算，保留游戏封面和透明卡带质感，帮助改善浏览游戏和切换模型时的流畅度。
 >
 > 当前主要在 **3GB 内存版 KPB** 上开发和测试，2GB 设备的实际体验会因设备和游戏库大小而不同，不保证固定帧率。
+>
+> **2026-10-25 后台模型缓存版**会在游戏中和熄屏后保留八台模型。3GB 设备实测 Socket 整体后台 PSS 约 **1.12 GiB**；本版尚未在 2GB 设备验证。“高帧数”简化材质计算，不等于低内存占用。安装前请备份配置，历史构建见 [全部版本](https://github.com/FredZ6/kpb-socket/releases)。
 >
 > 如果开启高帧数后仍明显卡顿，或出现内存不足、黑屏等问题，，也可以考虑 Beacon 或天马 G 前端。
 >
@@ -22,6 +24,14 @@
 
 面向 KPB 等安卓掌机的游戏前端，使用 3D 卡带和主机模型浏览游戏。游戏通过单独安装的模拟器运行。
 
+## 最新版：2026-10-25 后台模型缓存版
+
+进入游戏或熄屏后保留八台游戏机模型，后台停止模型绘制；再次进入游戏平台时直接使用缓存，移除“正在打开”弹窗。保留当前模型、贴图、透明质感，以及封面匹配分帧修复。
+
+[下载最新 APK](https://github.com/FredZ6/kpb-socket/releases/download/v2026.10.25-background-model-cache/socket-bbm-background-model-cache-20261025.apk) · [完整发布页](https://github.com/FredZ6/kpb-socket/releases/tag/v2026.10.25-background-model-cache) · [实测报告](docs/reports/2026-10-25-background-model-cache.md) · [性能数据 ZIP](https://github.com/FredZ6/kpb-socket/releases/download/v2026.10.25-background-model-cache/performance-data-20261025.zip)
+
+3GB KPB 两组约20秒实测：亮屏回卡带页 **29.89 FPS**，实际游戏按 Home 返回 **30.22 FPS**，均无超过100ms的长帧。未达到稳定60FPS；2GB设备、重负载模拟器长时并行和熄屏耗电尚未验证，测量条件与限制见报告。
+
 ## 第一次用？按这个顺序来
 
 **安装 Socket → 安装模拟器 → 放好游戏和封面 → 在 Socket 里添加平台。**
@@ -31,7 +41,7 @@ Socket 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 ## 第一步：安装 Socket
 
 1. 打开 [安装包下载页](https://github.com/FredZ6/kpb-socket/releases/latest)。
-2. 找到 **Assets（资源）**：通常下载 **`socket-bbm-model-inputfix-20261023.apk`（最新版）**；2GB 设备建议先按上方说明开启高帧数模式，`Source code` 不是安装包。
+2. 找到 **Assets（资源）**：通常下载 **`socket-bbm-background-model-cache-20261025.apk`（最新版）**；2GB 设备请先阅读顶部的内存说明，`Source code` 不是安装包。
 3. 在掌机的文件管理器里找到 APK，点开安装。如果安卓询问是否允许安装，按提示允许。
 4. 已经装过 socket-bbm 的用户，直接覆盖安装即可。**不要先卸载，也不要点“清除数据”**，以免丢失配置。
 
