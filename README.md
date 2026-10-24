@@ -10,6 +10,7 @@
 - [第四步：告诉 Socket 游戏在哪](#第四步告诉-socket-游戏在哪)
 - [平时怎么操作？](#平时怎么操作)
 - [遇到问题先看这里](#遇到问题先看这里)
+- [访问与下载统计](#访问与下载统计)
 
 > [!IMPORTANT]
 > **2GB 内存版 KPB：请先阅读本版内存说明**
@@ -268,5 +269,11 @@ PSP、NDS 等平台分别添加一次。建好文件夹并不等于已经添加�
 
 文件夹名字、封面命名和权限不正确时，不需要靠卸载 Socket 或清空全部数据解决。
 
+## 访问与下载统计
 
+[![README 访问次数](https://hits.sh/github.com/FredZ6/kpb-socket.svg?label=README%20views&color=007ec6)](https://hits.sh/github.com/FredZ6/kpb-socket/)
+[![发布附件累计下载量](https://img.shields.io/github/downloads/FredZ6/kpb-socket/total?label=Downloads&color=2ea44f)](https://github.com/FredZ6/kpb-socket/releases)
 
+- **README 访问次数**：由 Hits.sh 计数，从 2026-10-25 添加后开始累计，无法补回此前访问记录。受 GitHub 图片缓存、重复访问等影响，仅供参考，不代表独立访客人数，也无法判断是否滚动到本节。
+- **发布附件累计下载量**：由 Shields.io 读取 GitHub Releases 数据，包含所有版本的 APK、ZIP 等发布附件下载次数（含历史下载），不是安装人数；不含网盘下载和源码下载。
+- 数据会自动更新，可能存在缓存延迟。
