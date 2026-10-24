@@ -36,13 +36,15 @@
 
 适配 KPB、KPA 等安卓掌机的游戏前端，使用 3D 卡带和主机模型浏览游戏。游戏通过单独安装的模拟器运行。
 
-## 最新版：2026-10-25 后台模型缓存版
+## 最新版：2026-10-25 平台独立合集与排序版
 
-进入游戏或熄屏后保留八台游戏机模型，后台停止模型绘制；再次进入游戏平台时直接使用缓存，移除“正在打开”弹窗。保留当前模型、贴图、透明质感，以及封面匹配分帧修复。
+各平台游戏页按 **Select** 管理自己的合集：**A 进入、Y 新建、X 编辑、B 返回，十字键选择**。在 Select 页选中自建合集后用 **L/R 调整顺序**，游戏页分类和游戏的 **X 查看 → 合集** 同步更新。不同平台可有同名合集，增删改互不影响；设置中的旧合集入口已移除。
 
-[下载最新 APK](https://github.com/FredZ6/kpb-socket/releases/download/v2026.10.25-background-model-cache/socket-bbm-background-model-cache-20261025.apk) · [完整发布页](https://github.com/FredZ6/kpb-socket/releases/tag/v2026.10.25-background-model-cache) · [实测报告](docs/reports/2026-10-25-background-model-cache.md) · [性能数据 ZIP](https://github.com/FredZ6/kpb-socket/releases/download/v2026.10.25-background-model-cache/performance-data-20261025.zip)
+[下载最新 APK](https://github.com/FredZ6/kpb-socket/releases/download/v2026.10.25-platform-collections/socket-bbm-platform-collections-20261025.apk) · [完整发布页](https://github.com/FredZ6/kpb-socket/releases/tag/v2026.10.25-platform-collections) · [测试报告](docs/reports/2026-10-25-platform-collections.md) · [测试数据 ZIP](https://github.com/FredZ6/kpb-socket/releases/download/v2026.10.25-platform-collections/collection-test-data-20261025.zip)
 
-3GB KPB 两组约20秒实测：亮屏回卡带页 **29.89 FPS**，实际游戏按 Home 返回 **30.22 FPS**，均无超过100ms的长帧。未达到稳定60FPS；2GB设备、重负载模拟器长时并行和熄屏耗电尚未验证，测量条件与限制见报告。
+八个平台入口与合集功能回归通过，原17个合集、408条成员关系完整迁移。更新前请备份配置，覆盖安装时不要先卸载或清除数据。保留后台八模型缓存及画质方案；本轮约12秒短测 Home返回 **28.96 FPS**、熄屏恢复 **28.83 FPS**，均无 >100ms 长帧，未达到稳定60FPS，限制见报告。
+
+上一版的 [后台模型缓存报告](docs/reports/2026-10-25-background-model-cache.md) 和 [历史发布](https://github.com/FredZ6/kpb-socket/releases/tag/v2026.10.25-background-model-cache) 保留。
 
 ## 第一次用？按这个顺序来
 
@@ -53,7 +55,7 @@ Socket 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 ## 第一步：安装 Socket
 
 1. 打开 [安装包下载页](https://github.com/FredZ6/kpb-socket/releases/latest)。
-2. 找到 **Assets（资源）**：通常下载 **`socket-bbm-background-model-cache-20261025.apk`（最新版）**；2GB 设备请先阅读顶部的内存说明，`Source code` 不是安装包。
+2. 找到 **Assets（资源）**：通常下载 **`socket-bbm-platform-collections-20261025.apk`（最新版）**；2GB 设备请先阅读顶部的内存说明，`Source code` 不是安装包。
 3. 在掌机的文件管理器里找到 APK，点开安装。如果安卓询问是否允许安装，按提示允许。
 4. 已经装过 socket-bbm 的用户，直接覆盖安装即可。**不要先卸载，也不要点“清除数据”**，以免丢失配置。
 
