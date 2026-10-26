@@ -7,7 +7,7 @@
 
 CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立体卡带和主机模型浏览游戏，找回翻选卡带的乐趣，再通过已安装的模拟器进入游戏。
 
-[下载 CARTIS 2.0 安装包](https://github.com/FredZ6/CARTIS/releases/download/v2.0-cartis-20261027/CARTIS-2.0-final-20261027.apk) · [2.0 发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-cartis-20261027) · [新手安装教程](#第一次用按这个顺序来) · [历史版本](https://github.com/FredZ6/CARTIS/releases)
+[下载 CARTIS 2.0 安装包](https://github.com/FredZ6/CARTIS/releases/download/v2.0-cartis-20261027/CARTIS-2.0-20261027-r3.apk) · [2.0 发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-cartis-20261027) · [新手安装教程](#第一次用按这个顺序来) · [历史版本](https://github.com/FredZ6/CARTIS/releases)
 
 [![发布附件累计下载量](https://img.shields.io/github/downloads/FredZ6/CARTIS/total?label=Downloads&color=2563eb)](https://github.com/FredZ6/CARTIS/releases)
 [![README 访问次数](https://hits.sh/github.com/FredZ6/kpb-socket.svg?label=README%20views&color=007ec6)](https://hits.sh/github.com/FredZ6/kpb-socket/)
@@ -35,6 +35,7 @@ CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为�
 - **支持覆盖升级**：沿用原包名与签名，升级时保留游戏目录配置和个人设置；不要卸载或清除数据。
 - **持续处理用户反馈**：修复已发现的模型、布局、返回恢复及其他使用问题。
 - **全新 CARTIS 外观与设置页**：新像素鸟图标、自适应像素加载页、真实加载进度、统一按键页风格和更完整的关于页。
+- **卡带详情页更清爽**：按 X 后暂时隐藏左侧名称标签与无效的 Select 合集按钮，按 B 返回卡带选择页时恢复。
 - **性能优化**：批量绘制点阵背景，避免方向键操作时重复遍历游戏库，保留透明卡带、封面清晰度与八模型缓存。实测结果如下。
 
 ### 性能改进：以测试记录为准
@@ -54,16 +55,24 @@ CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为�
 
 **内存、耗电和热启动**：八模型缓存继续保留；本轮没有完整的同口径内存、耗电与热启动对照数据，因此不宣称降低百分比，也不使用“冷启动、热启动减少 50%”的说法。较早的后台缓存报告见 [内存与恢复测试](docs/reports/2026-10-25-background-model-cache.md)，启动数据见 [冷启动测试](docs/reports/2026-10-25-startup-optimization.md)。
 
-### 界面预览
+## KPB 实机功能展示
 
-![CARTIS 游戏卡带选择页面](docs/images/cartis-main.png)
+以下为 KPB 实机截图。[查看完整功能图集：27 张截图](docs/SHOWCASE.md)，包含加载进度、八种主机、模型放大旋转、合集、新建与编辑、搜索、应用列表和全部设置页面。
+
+| 游戏卡带浏览 | 游戏平台选择 |
+| --- | --- |
+| ![游戏库](docs/images/showcase/game-library.png) | ![平台选择](docs/images/showcase/model-gba.png) |
+
+| 合集管理 | 游戏搜索 |
+| --- | --- |
+| ![合集列表](docs/images/showcase/collections.png) | ![游戏搜索](docs/images/showcase/search.png) |
 
 <details>
-<summary>查看像素加载页与关于页</summary>
+<summary>预览像素加载页与关于页</summary>
 
-![CARTIS 像素加载页](docs/images/cartis-loading.png)
+![真实加载进度](docs/images/showcase/startup-13.png)
 
-![CARTIS 关于页面](docs/images/cartis-about.png)
+![关于页](docs/images/showcase/about.png)
 
 </details>
 
@@ -87,6 +96,23 @@ CARTIS 是独立修改项目，不代表原作者或相关厂商。教程与第�
 
 如果喜欢，可以在 **设置 → 支持** 中自愿支持开发；海外用户也可以使用 [PayPal](https://paypal.me/seabird26)。
 
+## 接下来：3.0 开发计划
+
+以下是下一阶段的计划，**尚未作为 3.0 功能发布**；上文列出的 2.0 改动均已完成。
+
+- **补充剩余 12 个游戏机模型**，继续完善主机展示与平台选择。
+- **个人页面布置**，打造属于自己的个人展示与收藏空间。
+- **暗夜模式**，提供适合夜间浏览的深色界面。
+- **更多语言**，新增英语与繁体中文。
+- **更多字体（评估中）**，探索更多适合掌机阅读与展示的字体选项。
+- **地区卡带适配**，区分美版 NES 与日版红白机 Famicom 等不同地区的卡带外形，让模型展示更贴近真实卡带。
+
+### 个人页面概念展示
+
+下图为 3.0 个人页面的设计概念，**不是当前版本实机截图，也不代表最终实现效果**。
+
+![CARTIS 3.0 个人页面概念设计](docs/images/cartis-3-profile-concept.png)
+
 ## 教程目录
 
 - [第一次用？按这个顺序来](#第一次用按这个顺序来)
@@ -108,7 +134,7 @@ CARTIS 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 ## 第一步：安装 CARTIS
 
 1. 打开 [安装包下载页](https://github.com/FredZ6/CARTIS/releases/latest)。
-2. 找到 **Assets（资源）**：通常下载 **`CARTIS-2.0-final-20261027.apk`（最新版）**；2GB 设备请先阅读顶部的内存说明，`Source code` 不是安装包。
+2. 找到 **Assets（资源）**：通常下载 **`CARTIS-2.0-20261027-r3.apk`（最新版）**；2GB 设备请先阅读顶部的内存说明，`Source code` 不是安装包。
 3. 在掌机的文件管理器里找到 APK，点开安装。如果安卓询问是否允许安装，按提示允许。
 4. 已经装过 CARTIS 的用户，直接覆盖安装即可。**不要先卸载，也不要点“清除数据”**，以免丢失配置。
 
