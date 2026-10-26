@@ -1,9 +1,4 @@
 > [!IMPORTANT]
-> **Replay 2.0 完整版已迁移到新仓库：[FredZ6/replay](https://github.com/FredZ6/replay)。**
->
-> [下载 2.0 完整版 APK](https://github.com/FredZ6/replay/releases/download/v2.0/Replay-2.0.apk) · [2.0 完整发布页](https://github.com/FredZ6/replay/releases/tag/v2.0) · [完整教程](https://github.com/FredZ6/replay/blob/main/docs/使用教程.md)
->
-> Replay 为本项目的新名称，包含此前功能与最新修复；已装本项目旧版的用户可直接覆盖更新，请勿先卸载或清除数据。本仓库继续保留旧版教程和历史发布。
 
 # Socket BBM
 
