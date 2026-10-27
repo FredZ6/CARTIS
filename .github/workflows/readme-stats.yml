@@ -1,7 +1,15 @@
 name: Update GBA README stats
 on:
   schedule:
-    - cron: '23 * * * *'
+    - cron: '7,22,37,52 * * * *'
+  release:
+    types: [published, edited]
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/readme-stats.yml'
+      - 'scripts/update_readme_stats.py'
+      - 'docs/images/stats/historical-downloads.json'
   workflow_dispatch:
 permissions:
   contents: write
@@ -11,15 +19,21 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - name: Read counters and render GBA screens
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python scripts/update_readme_stats.py
+        run: |
+          python scripts/update_readme_stats.py
+          echo '### GBA counter refresh' >> "$GITHUB_STEP_SUMMARY"
+          echo '```json' >> "$GITHUB_STEP_SUMMARY"
+          cat docs/images/stats/counts.json >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
       - name: Save updated displays
         run: |
           git add docs/images/stats

@@ -1,6 +1,9 @@
 """Render GBA README statistics; no third-party Python dependencies."""
 import json
 import os
+import time
+from datetime import datetime, timezone
+from urllib.error import HTTPError, URLError
 from pathlib import Path
 from urllib.request import Request, urlopen
 from xml.sax.saxutils import escape
@@ -13,8 +16,17 @@ def get_json(url, github=False):
     headers = {'User-Agent': 'CARTIS-readme-stats', 'Accept': 'application/json'}
     if github and os.getenv('GITHUB_TOKEN'):
         headers['Authorization'] = 'Bearer ' + os.environ['GITHUB_TOKEN']
-    with urlopen(Request(url, headers=headers), timeout=30) as response:
-        return json.load(response)
+    for attempt in range(3):
+        try:
+            with urlopen(Request(url, headers=headers), timeout=30) as response:
+                return json.load(response)
+        except (HTTPError, URLError, TimeoutError) as error:
+            # Retry transient failures; never mask authentication or missing endpoints.
+            if isinstance(error, HTTPError) and error.code < 500 and error.code != 429:
+                raise
+            if attempt == 2:
+                raise
+            time.sleep(2 ** (attempt + 1))
 
 def fetch_counts():
     total, page = 0, 1
@@ -33,7 +45,7 @@ def fetch_counts():
         raise ValueError('Invalid Hits total')
     history = json.loads((OUT / 'historical-downloads.json').read_text())
     historical = sum(asset['downloads'] for asset in history['assets'] if asset['id'] not in existing_ids)
-    return {'downloads': total + historical, 'views': views, 'historical_downloads': historical, 'current_asset_downloads': total}
+    return {'downloads': total + historical, 'views': views, 'historical_downloads': historical, 'current_asset_downloads': total, 'updated_at': datetime.now(timezone.utc).isoformat(timespec='seconds')}
 
 def pixel_number(number):
     value = str(number)
@@ -56,7 +68,7 @@ def console(label, number, subtitle):
     for offset, color in [(0,'#0b1b67'),(5,'#172caa'),(10,'#3449e3'),(15,'#7041db'),(20,'#a675ed')]:
         orbit += f'<path d="M8 {84+offset}h12v-12h20v-12h32v-10h48v-8h62v-6h64v8h48v10h36v12h24v12h18" fill="none" stroke="{color}" stroke-width="5"/>'
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="380" height="222" viewBox="0 0 380 222" role="img" aria-labelledby="title desc" shape-rendering="crispEdges">
-<title id="title">{escape(label)}：{number}</title><desc id="desc">深蓝星空像素 GBA，奶黄色数字，每小时自动刷新</desc>
+<title id="title">{escape(label)}：{number}</title><desc id="desc">深蓝星空像素 GBA，奶黄色数字，每15分钟尝试刷新</desc>
 <path d="M8 0H372V8H380V214H372V222H8V214H0V8H8Z" fill="#030620"/>
 <path d="M8 1H372V8H379V214H372V221H8V214H1V8H8Z" fill="none" stroke="#17215c" stroke-width="2"/>
 {stars}{orbit}
@@ -92,7 +104,10 @@ def main():
     counts = fetch_counts()  # Fetch both before changing files.
     OUT.mkdir(parents=True, exist_ok=True)
     for key, label, subtitle in [('downloads','下载次数','INCLUDING ARCHIVED APK'), ('views','访问次数','SINCE 2026.10.25')]:
-        (OUT / f'gba-{key}.svg').write_text(console(label, counts[key], subtitle), encoding='utf-8')
+        svg = console(label, counts[key], subtitle)
+        stamp = counts['updated_at'].replace('T', ' ')[:16] + ' UTC'
+        svg = svg.replace('</svg>', f'<text x="190" y="193" text-anchor="middle" fill="#8d9ac5" font-family="monospace" font-size="5.5">UPDATED {stamp}</text></svg>')
+        (OUT / f'gba-{key}.svg').write_text(svg, encoding='utf-8')
     (OUT / 'counts.json').write_text(json.dumps(counts, indent=2)+'\n', encoding='utf-8')
     print(json.dumps(counts))
 

@@ -13,7 +13,7 @@ CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立
 <a href="https://hits.sh/github.com/FredZ6/kpb-socket/"><img src="docs/images/stats/gba-views.svg" width="340" alt="GBA 显示屏：README 访问次数"></a>
 <img src="https://hits.sh/github.com/FredZ6/kpb-socket.svg?label=README%20views&amp;color=007ec6" width="1" height="1" alt="">
 
-<sub>屏幕数字每小时自动刷新，任务调度和图片缓存可能造成延迟。下载次数包含删除前备份的历史 APK 下载记录（130 次）及现存 GitHub Releases 附件下载，不含网盘下载；下载次数不等同安装人数；访问次数沿用原计数，不代表独立访客人数。</sub>
+<sub>每 15 分钟尝试刷新，发布更新时也会触发；屏幕标注最近成功更新时间（UTC）。GitHub 调度及图片缓存可能延迟，数字不是实时值。下载次数包含删除前备份的历史 APK 下载记录（130 次）及现存 GitHub Releases 附件下载，不含网盘下载；下载次数不等同安装人数；访问次数沿用原计数，不代表独立访客人数。</sub>
 
 ## 目录
 
