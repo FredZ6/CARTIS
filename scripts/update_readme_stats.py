@@ -18,7 +18,7 @@ def get_json(url, github=False):
         headers['Authorization'] = 'Bearer ' + os.environ['GITHUB_TOKEN']
     for attempt in range(3):
         try:
-            with urlopen(Request(url, headers=headers), timeout=30) as response:
+            with urlopen(Request(url, headers=headers), timeout=8) as response:
                 return json.load(response)
         except (HTTPError, URLError, TimeoutError) as error:
             # Retry transient failures; never mask authentication or missing endpoints.
@@ -28,7 +28,7 @@ def get_json(url, github=False):
                 raise
             time.sleep(2 ** (attempt + 1))
 
-def fetch_counts():
+def fetch_download_counts():
     total, page = 0, 1
     existing_ids = set()
     while True:
@@ -40,12 +40,24 @@ def fetch_counts():
         if len(releases) < 100:
             break
         page += 1
-    views = get_json('https://hits.sh/api/urns/github.com/FredZ6/kpb-socket/')['total']
-    if not isinstance(views, int) or views < 0:
-        raise ValueError('Invalid Hits total')
     history = json.loads((OUT / 'historical-downloads.json').read_text())
     historical = sum(asset['downloads'] for asset in history['assets'] if asset['id'] not in existing_ids)
-    return {'downloads': total + historical, 'views': views, 'historical_downloads': historical, 'current_asset_downloads': total, 'updated_at': datetime.now(timezone.utc).isoformat(timespec='seconds')}
+    return total, historical
+
+
+def fetch_views():
+    views = get_json('https://hits.sh/api/urns/github.com/FredZ6/kpb-socket/')['total']
+    if not isinstance(views, int) or isinstance(views, bool) or views < 0:
+        raise ValueError('Invalid Hits total')
+    return views
+
+
+def fetch_counts():
+    current, historical = fetch_download_counts()
+    return {'downloads': current + historical, 'views': fetch_views(),
+            'historical_downloads': historical, 'current_asset_downloads': current,
+            'updated_at': datetime.now(timezone.utc).isoformat(timespec='seconds')}
+
 
 def pixel_number(number):
     value = str(number)

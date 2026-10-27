@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/readme-stats.py": {
+      "maxDuration": 60,
+      "includeFiles": "{scripts/update_readme_stats.py,docs/images/stats/*.json}"
+    }
+  },
+  "rewrites": [
+    {"source": "/downloads.svg", "destination": "/api/readme-stats?metric=downloads"},
+    {"source": "/views.svg", "destination": "/api/readme-stats?metric=views"}
+  ]
+}
