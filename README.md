@@ -7,7 +7,7 @@
 
 CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立体卡带和主机模型浏览游戏，找回翻选卡带的乐趣，再通过已安装的模拟器进入游戏。
 
-[下载缩放修复版（KPB实测）](https://github.com/FredZ6/CARTIS/releases/download/v2.0-zoom-fix-20261027/CARTIS-2.0-zoom-fix-20261027.apk) · [最新发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-zoom-fix-20261027) · [新手安装教程](#第一次用按这个顺序来)
+[下载最新版（KPB 实测 · code18）](https://github.com/FredZ6/CARTIS/releases/download/v2.0-font-icon-20261027/CARTIS-2.0-transparent-icon-20261027.apk) · [最新发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-font-icon-20261027) · [新手安装教程](#第一次用按这个顺序来)
 
 <a href="https://github.com/FredZ6/CARTIS/releases"><img src="docs/images/stats/gba-downloads.svg" width="340" alt="GBA 显示屏：发布附件下载次数"></a>
 <a href="https://hits.sh/github.com/FredZ6/kpb-socket/"><img src="docs/images/stats/gba-views.svg" width="340" alt="GBA 显示屏：README 访问次数"></a>
@@ -37,11 +37,19 @@ CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立
 
 ---
 
-## 最新更新：平台缩放修复
+## 最新更新：字体切换修复与透明图标
 
-修复3D模型缩放至0.9、0.8后卡带被灰雾覆盖的问题，覆盖所有共用相机的卡带平台。**修复包为versionCode13，基于KPB测试版，已在KPB实机验证；KPA及其他设备尚未验证此整包。** 升级可直接覆盖安装，请先备份配置与存档。
+当前最新版为 **CARTIS 2.0，versionCode 18**，安装包 **`CARTIS-2.0-transparent-icon-20261027.apk`**。已在 KPB 实机验证；KPA 及其他设备尚未完成此整包的实机回归。可同签名覆盖安装，保留配置；不要先卸载或清除数据。
 
-[修复版下载与更新说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-zoom-fix-20261027) · [技术记录与实机截图](docs/reports/2026-10-27-camera-zoom-fix.md)
+- **修复更换字体黑屏退出**：在设置中选择字体后直接刷新界面，无需重建整个主场景；五种字体切换和重启后保留已通过 KPB 实测。
+- **更新透明图标**：改为像素警亭与游戏机图案，移除图片最外层深蓝色背景，并同步关于页小图标。
+- **关于页增加底部插图**：原介绍、致谢和版本信息下方加入完整像素插图，可向下滚动查看。
+- **保留核心识别修复**：RetroArch 启动项按实际安装的核心显示，启动前再次检查，缺失时提示并阻止启动；首次使用需按提示授权 RetroArch 的 `cores` 目录。
+- **保留此前缩放修复与性能改进**：包括模型缩小后出现灰雾的问题修复，以及已确认的点阵批量绘制和游戏库缓存优化。
+
+[直接下载最新版 APK](https://github.com/FredZ6/CARTIS/releases/download/v2.0-font-icon-20261027/CARTIS-2.0-transparent-icon-20261027.apk) · [完整发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-font-icon-20261027) · [SHA-256 校验文件](https://github.com/FredZ6/CARTIS/releases/download/v2.0-font-icon-20261027/SHA256SUMS.txt)
+
+此前缩放问题的技术记录与实机截图见 [平台缩放修复报告](docs/reports/2026-10-27-camera-zoom-fix.md)。
 
 ## CARTIS 是什么？
 
@@ -65,7 +73,7 @@ CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为�
 - **KPA 已完成适配**：针对 KPA 与 KPB 的屏幕比例调整布局、平台名称与底部菜单显示，并修正 NDS 模型切换时缩小的问题。
 - **支持覆盖升级**：沿用原包名与签名，升级时保留游戏目录配置和个人设置；不要卸载或清除数据。
 - **持续处理用户反馈**：修复已发现的模型、布局、返回恢复及其他使用问题。
-- **全新 CARTIS 外观与设置页**：新像素鸟图标、自适应像素加载页、真实加载进度、统一按键页风格和更完整的关于页。
+- **全新 CARTIS 外观与设置页**：透明像素警亭图标、自适应像素加载页、真实加载进度、统一按键页风格和带底部插图的关于页。
 - **卡带详情页更清爽**：按 X 后暂时隐藏左侧名称标签与无效的 Select 合集按钮，按 B 返回卡带选择页时恢复。
 - **性能优化**：批量绘制点阵背景，避免方向键操作时重复遍历游戏库，保留透明卡带、封面清晰度与八模型缓存。实测结果如下。
 
@@ -111,7 +119,7 @@ CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为�
 
 - **已有 Socket BBM / Replay / CARTIS 的用户**：本次安装包沿用原包名与签名，可覆盖安装；不要先卸载或清除数据，升级前建议备份自己的配置与存档。
 - **KPB 3GB**：当前主要实测设备。保留现有画质设置的稳定检查点中，GBA 卡带页静止约 **41.19 FPS**，左右切换约 **39.34 FPS**；具体帧率随场景、设备状态与游戏库变化，**不是稳定 60 FPS**。
-- **KPA**：已完成适配；本次最终关于页按 960×640 完成布局检查，最终整包尚未重新在 KPA 实机验证。其他屏幕也采用自适应布局，但不承诺所有设备都无须调整。
+- **KPA**：已完成适配；历史版本已按 960×640 完成布局检查；当前 code18 的字体、图标和关于页更新仅在 KPB 完成实机验证，尚未在 KPA 重新验证。其他屏幕也采用自适应布局，但不承诺所有设备都无须调整。
 - **KPB 2GB**：本版未做实机验证。八模型后台缓存会占用较多内存，“高帧数”不等于低内存模式，请先备份并谨慎选择版本。
 - **性能选项**：可以分别选择“高精细”与“高帧数”；游戏画面中的帧率和模拟器兼容性由所选模拟器、核心与设备共同决定。
 
@@ -164,8 +172,8 @@ CARTIS 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 
 ## 第一步：安装 CARTIS
 
-1. 打开 [安装包下载页](https://github.com/FredZ6/CARTIS/releases/latest)。
-2. 找到 **Assets（资源）**：KPB本次修复包为 **`CARTIS-2.0-zoom-fix-20261027.apk`**；KPA及其他设备请先阅读顶部的验证范围。2GB设备请先阅读内存说明，`Source code` 不是安装包。
+1. [直接下载最新版 APK](https://github.com/FredZ6/CARTIS/releases/download/v2.0-font-icon-20261027/CARTIS-2.0-transparent-icon-20261027.apk)，或打开 [最新版安装包下载页](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-font-icon-20261027)。
+2. 找到 **Assets（资源）**：当前 KPB 实测安装包为 **`CARTIS-2.0-transparent-icon-20261027.apk`**（versionCode 18）；KPA 及其他设备请先阅读顶部的验证范围。2GB 设备请先阅读内存说明，`Source code` 不是安装包。
 3. 在掌机的文件管理器里找到 APK，点开安装。如果安卓询问是否允许安装，按提示允许。
 4. 已经装过 CARTIS 的用户，直接覆盖安装即可。**不要先卸载，也不要点“清除数据”**，以免丢失配置。
 
@@ -173,7 +181,7 @@ CARTIS 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 
 想用 Home 键从游戏回到 CARTIS：去安卓的 **设置 → 默认应用 → 桌面应用**，选择 **CARTIS**。不同设备的菜单名称可能略有不同。
 
-字体可以在 **设置 → 调整** 中切换，选择自己喜欢的风格。
+字体可以在 **设置 → 调整** 中切换。当前最新版已修复更换字体后黑屏退出的问题，选择后直接刷新并自动保存。
 
 ## 第二步：先装好模拟器
 
@@ -254,6 +262,8 @@ RetroArch 官方目前提示 Google Play 版本较旧，建议从官网下载。
 | 其他包名的 RetroArch，已下载 mGBA | 与实际安装版本匹配的 **RetroArch / mGBA** 启动项 |
 | 独立版 PPSSPP | **PPSSPP** 启动项，不选 RetroArch 的 PPSSPP 核心 |
 | Azahar | 与所安装版本对应的 **Azahar** 启动项；不要仅凭名字相似选择旧 Citra / Lime3DS 启动项 |
+
+首次使用核心识别功能时，按提示授权 **RetroArch 的 `cores` 目录**；这与游戏目录授权分开处理。未授权或未安装的核心不会作为可用核心显示，打开核心下拉菜单可刷新检查。
 
 选项具体名称以当前 CARTIS 列表为准。**应用版本、核心和启动项要相互对应**：例如没有安装 64 位 RetroArch，却选了 RetroArch 64，可能无法打开游戏；下载了 mGBA，却选另一个尚未安装的 GBA 核心，也会启动失败。
 
