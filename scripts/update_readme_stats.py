@@ -18,18 +18,22 @@ def get_json(url, github=False):
 
 def fetch_counts():
     total, page = 0, 1
+    existing_ids = set()
     while True:
         releases = get_json(f'https://api.github.com/repos/FredZ6/CARTIS/releases?per_page=100&page={page}', True)
         for release in releases:
             if not release['draft']:
                 total += sum(asset['download_count'] for asset in release['assets'])
+                existing_ids.update(asset['id'] for asset in release['assets'])
         if len(releases) < 100:
             break
         page += 1
     views = get_json('https://hits.sh/api/urns/github.com/FredZ6/kpb-socket/')['total']
     if not isinstance(views, int) or views < 0:
         raise ValueError('Invalid Hits total')
-    return {'downloads': total, 'views': views}
+    history = json.loads((OUT / 'historical-downloads.json').read_text())
+    historical = sum(asset['downloads'] for asset in history['assets'] if asset['id'] not in existing_ids)
+    return {'downloads': total + historical, 'views': views, 'historical_downloads': historical, 'current_asset_downloads': total}
 
 def pixel_number(number):
     value = str(number)
@@ -53,13 +57,13 @@ def console(label, number, subtitle):
 <g fill="#342e4f" stroke="#554577" stroke-width="2"><circle cx="319" cy="107" r="11"/><circle cx="345" cy="91" r="11"/></g><g fill="#a69abb" font-family="sans-serif" font-size="9" text-anchor="middle"><text x="319" y="110">B</text><text x="345" y="94">A</text></g>
 <circle cx="307" cy="58" r="3" fill="#b9ef7c"/><text x="314" y="61" fill="#e0d9f6" font-size="5" font-family="monospace">POWER</text>
 <g stroke="#44375f" stroke-width="3" stroke-linecap="round"><path d="M310 137L316 145M320 134L326 142M330 131L336 139"/><path d="M50 144L61 141M51 154L62 151"/></g>
-<text x="190" y="199" text-anchor="middle" font-family="monospace" font-size="9" fill="#81769a" letter-spacing="2">{('RELEASE DOWNLOADS' if subtitle == 'ALL RELEASE ASSETS' else 'README VISITS')}</text>
+<text x="190" y="199" text-anchor="middle" font-family="monospace" font-size="9" fill="#81769a" letter-spacing="2">{('RELEASE DOWNLOADS' if subtitle == 'INCLUDING ARCHIVED APK' else 'README VISITS')}</text>
 </svg>'''
 
 def main():
     counts = fetch_counts()  # Fetch both before changing files.
     OUT.mkdir(parents=True, exist_ok=True)
-    for key, label, subtitle in [('downloads','下载次数','ALL RELEASE ASSETS'), ('views','访问次数','SINCE 2026.10.25')]:
+    for key, label, subtitle in [('downloads','下载次数','INCLUDING ARCHIVED APK'), ('views','访问次数','SINCE 2026.10.25')]:
         (OUT / f'gba-{key}.svg').write_text(console(label, counts[key], subtitle), encoding='utf-8')
     (OUT / 'counts.json').write_text(json.dumps(counts, indent=2)+'\n', encoding='utf-8')
     print(json.dumps(counts))

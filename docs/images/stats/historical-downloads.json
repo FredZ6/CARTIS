@@ -1,0 +1,71 @@
+{
+  "recorded_at": "2026-10-27T17:03:03+08:00",
+  "source": "GitHub release assets snapshot before cleanup",
+  "assets": [
+    {
+      "id": 679078440,
+      "name": "CARTIS-2.0-20261027-r3.apk",
+      "downloads": 45
+    },
+    {
+      "id": 675693102,
+      "name": "socket-bbm-kpa-20261026-r3.apk",
+      "downloads": 6
+    },
+    {
+      "id": 674032373,
+      "name": "socket-bbm-startup-optimized-20261025.apk",
+      "downloads": 11
+    },
+    {
+      "id": 673028483,
+      "name": "socket-bbm-platform-collections-20261025.apk",
+      "downloads": 3
+    },
+    {
+      "id": 672870087,
+      "name": "socket-bbm-background-model-cache-20261025.apk",
+      "downloads": 1
+    },
+    {
+      "id": 667907459,
+      "name": "socket-bbm-performance-20261023.apk",
+      "downloads": 5
+    },
+    {
+      "id": 668147482,
+      "name": "socket-bbm-model-inputfix-20261023.apk",
+      "downloads": 12
+    },
+    {
+      "id": 665022331,
+      "name": "socket-bbm-sleep-pose-fix-20261022.apk",
+      "downloads": 10
+    },
+    {
+      "id": 661431542,
+      "name": "socket-bbm-gba-sp-interaction-20261021.apk",
+      "downloads": 17
+    },
+    {
+      "id": 659973453,
+      "name": "socket-bbm-memory-20261021.apk",
+      "downloads": 0
+    },
+    {
+      "id": 660162266,
+      "name": "socket-bbm-gbc-display-fix-20261021.apk",
+      "downloads": 0
+    },
+    {
+      "id": 661196625,
+      "name": "socket-bbm-no-platform-chooser.apk",
+      "downloads": 4
+    },
+    {
+      "id": 656985080,
+      "name": "socket-bbm-20261020-keybindings.apk",
+      "downloads": 16
+    }
+  ]
+}
