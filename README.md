@@ -7,7 +7,7 @@
 
 CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立体卡带和主机模型浏览游戏，找回翻选卡带的乐趣，再通过已安装的模拟器进入游戏。
 
-[下载最新版（KPB 实测 · code18）](https://github.com/FredZ6/CARTIS/releases/download/v2.0-font-icon-20261027/CARTIS-2.0-transparent-icon-20261027.apk) · [最新发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-font-icon-20261027) · [新手安装教程](#第一次用按这个顺序来)
+[下载最新版（KPB 实测 · code19）](https://github.com/FredZ6/CARTIS/releases/download/v2.0-core-rollback-20261028/CARTIS-2.0-core-rollback-20261028.apk) · [最新发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-core-rollback-20261028) · [新手安装教程](#第一次用按这个顺序来)
 
 <a href="https://github.com/FredZ6/CARTIS/releases"><img src="https://cartis-readme-counters.vercel.app/downloads.svg" width="340" alt="GBA 显示屏：发布附件下载次数"></a>
 <a href="https://hits.sh/github.com/FredZ6/kpb-socket/"><img src="https://cartis-readme-counters.vercel.app/views.svg" width="340" alt="GBA 显示屏：README 访问次数"></a>
@@ -37,17 +37,19 @@ CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立
 
 ---
 
-## 最新更新：字体切换修复与透明图标
+## 最新更新：恢复免核心目录授权
 
-当前最新版为 **CARTIS 2.0，versionCode 18**，安装包 **`CARTIS-2.0-transparent-icon-20261027.apk`**。已在 KPB 实机验证；KPA 及其他设备尚未完成此整包的实机回归。可同签名覆盖安装，保留配置；不要先卸载或清除数据。
+当前最新版为 **CARTIS 2.0，versionCode 19**，安装包 **`CARTIS-2.0-core-rollback-20261028.apk`**。已在 KPB 实机验证；KPA 及其他设备尚未完成此整包的实机回归。可同签名覆盖安装，保留配置；不要先卸载或清除数据。
 
 - **修复更换字体黑屏退出**：在设置中选择字体后直接刷新界面，无需重建整个主场景；五种字体切换和重启后保留已通过 KPB 实测。
 - **更新透明图标**：改为像素警亭与游戏机图案，移除图片最外层深蓝色背景，并同步关于页小图标。
 - **关于页增加底部插图**：原介绍、致谢和版本信息下方加入完整像素插图，可向下滚动查看。
-- **保留核心识别修复**：RetroArch 启动项按实际安装的核心显示，启动前再次检查，缺失时提示并阻止启动；首次使用需按提示授权 RetroArch 的 `cores` 目录。
+- **恢复原来的模拟器列表与启动逻辑**：只检查模拟器应用是否安装，显示平台预设的核心选项；不再读取、过滤核心文件，也不再要求选择或授权 `cores` 文件夹。启动时优先使用单游戏设置，否则使用平台默认设置，将游戏和预设核心路径直接传给 RetroArch。
 - **保留此前缩放修复与性能改进**：包括模型缩小后出现灰雾的问题修复，以及已确认的点阵批量绘制和游戏库缓存优化。
 
-[直接下载最新版 APK](https://github.com/FredZ6/CARTIS/releases/download/v2.0-font-icon-20261027/CARTIS-2.0-transparent-icon-20261027.apk) · [完整发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-font-icon-20261027) · [SHA-256 校验文件](https://github.com/FredZ6/CARTIS/releases/download/v2.0-font-icon-20261027/SHA256SUMS.txt)
+[直接下载最新版 APK](https://github.com/FredZ6/CARTIS/releases/download/v2.0-core-rollback-20261028/CARTIS-2.0-core-rollback-20261028.apk) · [完整发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-core-rollback-20261028) · [SHA-256 校验文件](https://github.com/FredZ6/CARTIS/releases/download/v2.0-core-rollback-20261028/SHA256SUMS.txt)
+
+本次 KPB 实测：mGBA、gpSP 等预设恢复显示，《口袋妖怪 水银》成功启动且 Home 返回正常；10 项原配置与 RetroArch 配置逐字节不变。本次以透明图标版为基准，仅撤回核心目录授权与检测改动。
 
 此前缩放问题的技术记录与实机截图见 [平台缩放修复报告](docs/reports/2026-10-27-camera-zoom-fix.md)。
 
@@ -119,7 +121,7 @@ CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为�
 
 - **已有 Socket BBM / Replay / CARTIS 的用户**：本次安装包沿用原包名与签名，可覆盖安装；不要先卸载或清除数据，升级前建议备份自己的配置与存档。
 - **KPB 3GB**：当前主要实测设备。保留现有画质设置的稳定检查点中，GBA 卡带页静止约 **41.19 FPS**，左右切换约 **39.34 FPS**；具体帧率随场景、设备状态与游戏库变化，**不是稳定 60 FPS**。
-- **KPA**：已完成适配；历史版本已按 960×640 完成布局检查；当前 code18 的字体、图标和关于页更新仅在 KPB 完成实机验证，尚未在 KPA 重新验证。其他屏幕也采用自适应布局，但不承诺所有设备都无须调整。
+- **KPA**：已完成适配；历史版本已按 960×640 完成布局检查；当前 code19 撤回版仅在 KPB 完成本次实机验证，尚未在 KPA 重新验证。其他屏幕也采用自适应布局，但不承诺所有设备都无须调整。
 - **KPB 2GB**：本版未做实机验证。八模型后台缓存会占用较多内存，“高帧数”不等于低内存模式，请先备份并谨慎选择版本。
 - **性能选项**：可以分别选择“高精细”与“高帧数”；游戏画面中的帧率和模拟器兼容性由所选模拟器、核心与设备共同决定。
 
@@ -172,8 +174,8 @@ CARTIS 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 
 ## 第一步：安装 CARTIS
 
-1. [直接下载最新版 APK](https://github.com/FredZ6/CARTIS/releases/download/v2.0-font-icon-20261027/CARTIS-2.0-transparent-icon-20261027.apk)，或打开 [最新版安装包下载页](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-font-icon-20261027)。
-2. 找到 **Assets（资源）**：当前 KPB 实测安装包为 **`CARTIS-2.0-transparent-icon-20261027.apk`**（versionCode 18）；KPA 及其他设备请先阅读顶部的验证范围。2GB 设备请先阅读内存说明，`Source code` 不是安装包。
+1. [直接下载最新版 APK](https://github.com/FredZ6/CARTIS/releases/download/v2.0-core-rollback-20261028/CARTIS-2.0-core-rollback-20261028.apk)，或打开 [最新版安装包下载页](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-core-rollback-20261028)。
+2. 找到 **Assets（资源）**：当前 KPB 实测安装包为 **`CARTIS-2.0-core-rollback-20261028.apk`**（versionCode 19）；KPA 及其他设备请先阅读顶部的验证范围。2GB 设备请先阅读内存说明，`Source code` 不是安装包。
 3. 在掌机的文件管理器里找到 APK，点开安装。如果安卓询问是否允许安装，按提示允许。
 4. 已经装过 CARTIS 的用户，直接覆盖安装即可。**不要先卸载，也不要点“清除数据”**，以免丢失配置。
 
@@ -263,7 +265,7 @@ RetroArch 官方目前提示 Google Play 版本较旧，建议从官网下载。
 | 独立版 PPSSPP | **PPSSPP** 启动项，不选 RetroArch 的 PPSSPP 核心 |
 | Azahar | 与所安装版本对应的 **Azahar** 启动项；不要仅凭名字相似选择旧 Citra / Lime3DS 启动项 |
 
-首次使用核心识别功能时，按提示授权 **RetroArch 的 `cores` 目录**；这与游戏目录授权分开处理。未授权或未安装的核心不会作为可用核心显示，打开核心下拉菜单可刷新检查。
+**无需选择或授权 `cores` 文件夹。** CARTIS 仅检查模拟器应用是否安装，列表中的核心名称是平台预设选项，不代表该核心已经安装。游戏目录仍按正常流程选择；具体核心由 RetroArch 自己加载。已有天马定制模拟器的用户，无需为了核心目录授权而替换模拟器。
 
 选项具体名称以当前 CARTIS 列表为准。**应用版本、核心和启动项要相互对应**：例如没有安装 64 位 RetroArch，却选了 RetroArch 64，可能无法打开游戏；下载了 mGBA，却选另一个尚未安装的 GBA 核心，也会启动失败。
 
