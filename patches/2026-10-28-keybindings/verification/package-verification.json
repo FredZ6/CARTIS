@@ -1,0 +1,14 @@
+{
+  "sha256": "f14b7ce59aa6001300d5da7ae8a33773f5075577ab2fbeff059524cc8cc2308d",
+  "baseline_sha256": "f900051e02ccde3504bfdd67a7742e51f20181f1738f9303b9f48034d66cbded",
+  "changed_entries": [
+    "AndroidManifest.xml",
+    "assets/assets.sparsepck",
+    "assets/bbm_keys/router.gd",
+    "assets/scripts/screens/screen_main_menu_hb.gd"
+  ],
+  "unchanged_entries": 11431,
+  "sparse_index_entries_verified": 11342,
+  "production_sources_verified": true,
+  "temporary_probe_absent": true
+}

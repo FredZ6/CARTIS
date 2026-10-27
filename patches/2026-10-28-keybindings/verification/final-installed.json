@@ -1,0 +1,9 @@
+{
+  "sha256": "f14b7ce59aa6001300d5da7ae8a33773f5075577ab2fbeff059524cc8cc2308d",
+  "matches_local_apk": true,
+  "version": "versionCode=20 minSdk=29 targetSdk=36",
+  "config_files_verified": 11,
+  "changed_configs": [],
+  "script_errors": [],
+  "temporary_qa_files_absent": true
+}

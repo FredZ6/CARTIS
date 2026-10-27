@@ -1,0 +1,69 @@
+--- a/screen_main_menu_hb.gd
++++ b/screen_main_menu_hb.gd
+@@ -4147,15 +4147,28 @@
+ 	print('HB PLATFORMS CLOSE')
+ 
+ func _hb_console_choose() -> void:
++	if not _hb_console_is_open() or _hb_console_platforms.is_empty(): return
++	_hb_console_enter_platform(_hb_console_platforms[_hb_console_index])
++
++func _hb_console_quick_switch(step: int) -> void:
++	if not is_current: return
++	var platforms := _hb_console_available()
++	if platforms.is_empty(): return
++	var index := platforms.find_custom(func(platform): return _hb_plat_key(platform) == _hb_scope_key)
++	if index < 0:
++		index = 0 if step > 0 else platforms.size()-1
++	else:
++		index = posmod(index+step,platforms.size())
++	_stop_move_carousel()
++	_hb_console_enter_platform(platforms[index])
++
++func _hb_console_enter_platform(target: Platform) -> void:
+ 	var entry_started := Time.get_ticks_usec()
+ 	var entry_marks := {}
+ 	var pipelines_before := _hb_profile_pipelines()
+-	print('HB ENTRY AA main=',carousel_3d.get_viewport().msaa_3d,' platform=',_hb_console_viewport.msaa_3d,' before=',JSON.stringify(pipelines_before))
++	print('HB ENTRY AA main=',carousel_3d.get_viewport().msaa_3d,' platform=',(_hb_console_viewport.msaa_3d if is_instance_valid(_hb_console_viewport) else 0),' before=',JSON.stringify(pipelines_before))
+ 	_hb_console_zoom_reset()
+ 	entry_marks['zoom_reset'] = Time.get_ticks_usec()-entry_started
+-	if not _hb_console_is_open() or _hb_console_platforms.is_empty():
+-		return
+-	var target := _hb_console_platforms[_hb_console_index]
+ 	# Re-resolve in case the settings changed while this page was open.
+ 	var available := _hb_console_available()
+ 	entry_marks['available'] = Time.get_ticks_usec()-entry_started
+@@ -4211,6 +4224,13 @@
+ 	return true
+ 
+ func _hb_console_shoulder(shoulder: int, pressed: bool) -> void:
++	# The router already resolves configured chords. Navigation actions must
++	# never be combined into a second, implicit platform-page shortcut.
++	if is_instance_valid(_bbm_keys_router):
++		if pressed:
++			if _hb_console_is_open(): _hb_console_move(shoulder)
++			else: _change_platform(shoulder)
++		return
+ 	if shoulder < 0: _hb_console_left = pressed
+ 	else: _hb_console_right = pressed
+ 	print('HB PLATFORM SHOULDER side=', shoulder, ' pressed=', pressed)
+@@ -4245,13 +4265,18 @@
+ 		_hb_console_pending = 0
+ 		_hb_console_chord = false
+ 		return false
++	if event.is_action('bbm_platform_previous') or event.is_action('bbm_platform_next'):
++		if event.is_pressed() and not event.is_echo():
++			_hb_console_quick_switch(-1 if event.is_action('bbm_platform_previous') else 1)
++		get_viewport().set_input_as_handled()
++		return true
+ 	if event.is_action('bbm_platforms') or (not is_instance_valid(_bbm_keys_router) and event is InputEventKey and event.keycode == KEY_F5):
+ 		if event.is_pressed() and not event.is_echo():
+ 			if _hb_console_is_open(): _hb_console_close()
+ 			else: _hb_console_open()
+ 		get_viewport().set_input_as_handled()
+ 		return true
+-	if event is InputEventJoypadButton and event.button_index in [JOY_BUTTON_LEFT_SHOULDER, JOY_BUTTON_RIGHT_SHOULDER]:
++	if not is_instance_valid(_bbm_keys_router) and event is InputEventJoypadButton and event.button_index in [JOY_BUTTON_LEFT_SHOULDER, JOY_BUTTON_RIGHT_SHOULDER]:
+ 		_hb_console_shoulder(-1 if event.button_index == JOY_BUTTON_LEFT_SHOULDER else 1, event.pressed)
+ 		get_viewport().set_input_as_handled()
+ 		return true

@@ -1,0 +1,166 @@
+--- a/router.gd
++++ b/router.gd
+@@ -1,10 +1,10 @@
+ extends Node
+ # Frontend-only input router. No per-frame polling, services, or emulator changes.
+ const CFG_PATH := 'user://bbm_keys.cfg'
+-const ACTIONS := ['confirm','back','settings','apps','inspect','collections','search','previous','next','platforms']
+-const TITLES := {'confirm':'确认 / 启动','back':'返回 / 关闭','settings':'打开设置','apps':'打开应用','inspect':'查看游戏','collections':'所有合集','search':'搜索游戏','previous':'上一个合集 / 平台','next':'下一个合集 / 平台','platforms':'游戏平台'}
+-const EVENTS := {'confirm':'ui_accept','back':'ui_cancel','settings':'open_settings','apps':'open_apps','inspect':'option','collections':'bbm_collections','search':'bbm_search','previous':'platform_prev','next':'platform_next','platforms':'bbm_platforms'}
+-const SCOPES := {'confirm':['main','gui','picker','search','platforms','preview'],'back':['gui','picker','search','platforms','preview'],'settings':['main','picker'],'apps':['main'],'inspect':['main','picker'],'collections':['main','picker'],'search':['main','search'],'previous':['main','platforms','picker'],'next':['main','platforms','picker'],'platforms':['main','platforms']}
++const ACTIONS := ['confirm','back','settings','apps','inspect','collections','search','previous','next','platforms','platform_previous','platform_next']
++const TITLES := {'confirm':'确认 / 启动','back':'返回 / 关闭','settings':'打开设置','apps':'打开应用','inspect':'查看游戏','collections':'所有合集','search':'搜索游戏','previous':'上一个合集 / 平台','next':'下一个合集 / 平台','platforms':'游戏平台','platform_previous':'上一个游戏平台','platform_next':'下一个游戏平台'}
++const EVENTS := {'confirm':'ui_accept','back':'ui_cancel','settings':'open_settings','apps':'open_apps','inspect':'option','collections':'bbm_collections','search':'bbm_search','previous':'platform_prev','next':'platform_next','platforms':'bbm_platforms','platform_previous':'bbm_platform_previous','platform_next':'bbm_platform_next'}
++const SCOPES := {'confirm':['main','gui','picker','search','platforms','preview'],'back':['gui','picker','search','platforms','preview'],'settings':['main','picker'],'apps':['main'],'inspect':['main','picker'],'collections':['main','picker'],'search':['main','search'],'previous':['main','platforms','picker'],'next':['main','platforms','picker'],'platforms':['main','platforms'],'platform_previous':['main'],'platform_next':['main']}
+ var main
+ var bindings := {}
+ var overrides := {}
+@@ -55,7 +55,7 @@
+ func defaults() -> Dictionary:
+ 	var swap := ControlIcons.get_style() == 'xbox'
+ 	var swap_xy := ControlIcons.get_style() in ['xbox','playstation']
+-	return {'confirm':['j:%d' % (JOY_BUTTON_B if swap else JOY_BUTTON_A)],'back':['j:%d' % (JOY_BUTTON_A if swap else JOY_BUTTON_B)],'settings':['j:%d' % (JOY_BUTTON_X if swap_xy else JOY_BUTTON_Y)],'apps':['j:%d' % (JOY_BUTTON_A if swap else JOY_BUTTON_B)],'inspect':['j:%d' % (JOY_BUTTON_Y if swap_xy else JOY_BUTTON_X)],'collections':['j:%d' % JOY_BUTTON_BACK],'search':['j:%d' % JOY_BUTTON_START],'previous':['j:%d' % JOY_BUTTON_LEFT_SHOULDER],'next':['j:%d' % JOY_BUTTON_RIGHT_SHOULDER],'platforms':['j:%d' % JOY_BUTTON_LEFT_SHOULDER,'j:%d' % JOY_BUTTON_RIGHT_SHOULDER]}
++	return {'confirm':['j:%d' % (JOY_BUTTON_B if swap else JOY_BUTTON_A)],'back':['j:%d' % (JOY_BUTTON_A if swap else JOY_BUTTON_B)],'settings':['j:%d' % (JOY_BUTTON_X if swap_xy else JOY_BUTTON_Y)],'apps':['j:%d' % (JOY_BUTTON_A if swap else JOY_BUTTON_B)],'inspect':['j:%d' % (JOY_BUTTON_Y if swap_xy else JOY_BUTTON_X)],'collections':['j:%d' % JOY_BUTTON_BACK],'search':['j:%d' % JOY_BUTTON_START],'previous':['j:%d' % JOY_BUTTON_LEFT_SHOULDER],'next':['j:%d' % JOY_BUTTON_RIGHT_SHOULDER],'platforms':['j:%d' % JOY_BUTTON_LEFT_SHOULDER,'j:%d' % JOY_BUTTON_RIGHT_SHOULDER],'platform_previous':['j:%d' % JOY_BUTTON_DPAD_LEFT,'j:%d' % JOY_BUTTON_RIGHT_SHOULDER],'platform_next':['j:%d' % JOY_BUTTON_DPAD_RIGHT,'j:%d' % JOY_BUTTON_RIGHT_SHOULDER]}
+ 
+ func _load_bindings() -> void:
+ 	bindings = defaults()
+@@ -71,7 +71,7 @@
+ 		for token in value:
+ 			if not token is String or not _valid_token(token) or seen.has(token): valid = false
+ 			seen[token] = true
+-		if valid:
++		if valid and _valid_binding(value):
+ 			overrides[action] = value.duplicate()
+ 			bindings[action] = value.duplicate()
+ 
+@@ -79,10 +79,22 @@
+ 	var parts := token.split(':')
+ 	if parts.size() != 2 or not parts[1].is_valid_int(): return false
+ 	var id := int(parts[1])
+-	if parts[0] == 'j': return id >= 0 and id < 256 and id != JOY_BUTTON_GUIDE and not id in [JOY_BUTTON_DPAD_UP,JOY_BUTTON_DPAD_DOWN,JOY_BUTTON_DPAD_LEFT,JOY_BUTTON_DPAD_RIGHT]
++	if parts[0] == 'j': return id >= 0 and id < 256 and id != JOY_BUTTON_GUIDE and not id in [JOY_BUTTON_DPAD_UP,JOY_BUTTON_DPAD_DOWN]
+ 	if parts[0] == 'a': return id in [JOY_AXIS_TRIGGER_LEFT,JOY_AXIS_TRIGGER_RIGHT]
+ 	if parts[0] == 'k': return id > 0 and not id in [KEY_ESCAPE,KEY_HOME,KEY_VOLUMEUP,KEY_VOLUMEDOWN,KEY_UP,KEY_DOWN,KEY_LEFT,KEY_RIGHT]
+ 	return false
++
++func _direction_token(token: String) -> bool:
++	return token in ['j:%d' % JOY_BUTTON_DPAD_LEFT,'j:%d' % JOY_BUTTON_DPAD_RIGHT]
++
++func _valid_binding(tokens: Array) -> bool:
++	if tokens.size() > 3: return false
++	var seen := {}
++	for token in tokens:
++		if not token is String or not _valid_token(token) or seen.has(token): return false
++		seen[token] = true
++	# A horizontal direction remains ordinary navigation on its own.
++	return tokens.is_empty() or tokens.any(func(token): return not _direction_token(token))
+ 
+ func _save_bindings() -> bool:
+ 	var cfg := ConfigFile.new()
+@@ -133,8 +145,11 @@
+ 		return
+ 	if is_instance_valid(focus_overlay) and event is InputEventJoypadButton:
+ 		focus_overlay.set('_using_controller',true)
++	var token_id := String(parsed.device)+'|'+token
++	var direction_claimed := blocked.has(token_id)
+ 	_handle(token,bool(parsed.pressed),String(parsed.device),scope)
+-	get_viewport().set_input_as_handled()
++	if not _direction_token(token) or direction_claimed or blocked.has(token_id):
++		get_viewport().set_input_as_handled()
+ 
+ func _event_token(event: InputEvent) -> Dictionary:
+ 	if event is InputEventJoypadButton:
+@@ -168,6 +183,18 @@
+ 	if action.is_empty() or not scope in SCOPES[action]: return false
+ 	if not overrides.has(action): _send(action,event.pressed)
+ 	return true
++
++func _chord_blocked(action: String,device: String,tokens: Array) -> bool:
++	var quick_actions := ['platform_previous','platform_next']
++	var repeat_direction: bool = action in quick_actions and tokens.any(func(token): return _direction_token(token))
++	for token in tokens:
++		var id := device+'|'+String(token)
++		if not blocked.has(id): continue
++		# Re-arm a released direction while the shortcut's modifier stays held.
++		# The modifier remains blocked for ordinary single-button navigation.
++		if repeat_direction and blocked[id] in quick_actions and not _direction_token(token): continue
++		return true
++	return false
+ 
+ func _handle(token: String,pressed: bool,device: String,scope: String) -> void:
+ 	if not held.has(device): held[device] = {}
+@@ -186,7 +213,7 @@
+ 			if active.has(id): continue
+ 			var list: Array = bindings[action]
+ 			if not token in list: continue
+-			if list.any(func(t): return blocked.has(device+'|'+String(t))): continue
++			if _chord_blocked(action,device,list): continue
+ 			var longer := false
+ 			for other in ACTIONS:
+ 				if scope in SCOPES[other] and bindings[other].size() > list.size() and list.all(func(t): return t in bindings[other]): longer = true
+@@ -196,7 +223,7 @@
+ 			if list.size() > 1:
+ 				for part in list:
+ 					pending.erase(device+'|'+String(part))
+-					blocked[device+'|'+String(part)] = true
++					blocked[device+'|'+String(part)] = action
+ 			active[id] = {'action':action,'tokens':list.duplicate(),'device':device}
+ 			_send(action,true)
+ 	else:
+@@ -216,6 +243,9 @@
+ 
+ func _send(action: String,pressed: bool) -> void:
+ 	if not is_instance_valid(main): return
++	if pressed and action in ['platform_previous','platform_next']:
++		Input.action_release('ui_left')
++		Input.action_release('ui_right')
+ 	injecting = true
+ 	var event := InputEventAction.new()
+ 	event.action = EVENTS[action]
+@@ -266,6 +296,7 @@
+ 	return result
+ 
+ func commit(action: String,tokens: Array,replace_conflicts := false) -> bool:
++	if not action in ACTIONS or not _valid_binding(tokens): return false
+ 	var conflicts_found := conflicts(action,tokens)
+ 	if not conflicts_found.is_empty() and not replace_conflicts: return false
+ 	var old_bindings := bindings.duplicate(true)
+@@ -381,7 +412,7 @@
+ 		key_rows[action] = {'button':row,'label':binding}
+ 		chain.append(row)
+ 	status_label = Label.new()
+-	status_label.text = '选择功能后录入按键，最多支持 3 键组合。方向键保留导航；重复绑定会提示冲突。'
++	status_label.text = '选择功能后录入按键，最多支持 3 键组合。十字键左 / 右可用于组合；重复绑定会提示冲突。'
+ 	status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+ 	status_label.add_theme_font_size_override('font_size',28)
+ 	status_label.modulate.a = 0.65
+@@ -442,7 +473,7 @@
+ 		if event.pressed: _cancel_dialog()
+ 		return
+ 	if not _valid_token(token):
+-		dialog.set_message('方向键、Home 和系统键保留原用途，请选择其他按键。')
++		dialog.set_message('十字键上 / 下、Home 和系统键保留原用途；十字键左 / 右可用于组合。')
+ 		return
+ 	if event is InputEventKey and event.echo: return
+ 	if not capture_device.is_empty() and capture_device != parsed.device: return
+@@ -461,6 +492,11 @@
+ 		capture_held.erase(token)
+ 		if capture_held.is_empty() and not capture_tokens.is_empty():
+ 			if capture_tokens.size() > 3:
++				capture_tokens.clear()
++				capture_device = ''
++				return
++			if not _valid_binding(capture_tokens):
++				dialog.set_message('十字键左 / 右需与其他按键组成组合，请重新录入。')
+ 				capture_tokens.clear()
+ 				capture_device = ''
+ 				return
+@@ -658,7 +694,7 @@
+ 	var d := defaults()
+ 	for pair in [['confirm','A'],['back','B'],['inspect','X'],['settings','Y'],['collections','Select'],['search','Start'],['previous','L'],['next','R']]:
+ 		if token in d[pair[0]]: return pair[1]
+-	return {JOY_BUTTON_LEFT_STICK:'L3',JOY_BUTTON_RIGHT_STICK:'R3'}.get(id,'手柄键 %d' % id)
++	return {JOY_BUTTON_DPAD_LEFT:'十字键左',JOY_BUTTON_DPAD_RIGHT:'十字键右',JOY_BUTTON_LEFT_STICK:'L3',JOY_BUTTON_RIGHT_STICK:'R3'}.get(id,'手柄键 %d' % id)
+ 
+ func token_icon(token: String) -> String:
+ 	var default := defaults()
