@@ -7,7 +7,7 @@
 
 CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立体卡带和主机模型浏览游戏，找回翻选卡带的乐趣，再通过已安装的模拟器进入游戏。
 
-[下载缩放修复版（KPB实测）](https://github.com/FredZ6/CARTIS/releases/download/v2.0-zoom-fix-20261027/CARTIS-2.0-zoom-fix-20261027.apk) · [旧 r3 安装包（KPA前次测试版本）](https://github.com/FredZ6/CARTIS/releases/download/v2.0-cartis-20261027/CARTIS-2.0-20261027-r3.apk) · [2.0 发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-cartis-20261027) · [新手安装教程](#第一次用按这个顺序来) · [历史版本](https://github.com/FredZ6/CARTIS/releases)
+[下载缩放修复版（KPB实测）](https://github.com/FredZ6/CARTIS/releases/download/v2.0-zoom-fix-20261027/CARTIS-2.0-zoom-fix-20261027.apk) · [最新发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-zoom-fix-20261027) · [新手安装教程](#第一次用按这个顺序来)
 
 [![发布附件累计下载量](https://img.shields.io/github/downloads/FredZ6/CARTIS/total?label=Downloads&color=2563eb)](https://github.com/FredZ6/CARTIS/releases)
 [![README 访问次数](https://hits.sh/github.com/FredZ6/kpb-socket.svg?label=README%20views&color=007ec6)](https://hits.sh/github.com/FredZ6/kpb-socket/)
@@ -160,7 +160,7 @@ CARTIS 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 ## 第一步：安装 CARTIS
 
 1. 打开 [安装包下载页](https://github.com/FredZ6/CARTIS/releases/latest)。
-2. 找到 **Assets（资源）**：KPB本次修复包为 **`CARTIS-2.0-zoom-fix-20261027.apk`**；KPA及其他设备请先阅读顶部的验证范围，并按需使用保留的旧r3。2GB设备请先阅读内存说明，`Source code` 不是安装包。
+2. 找到 **Assets（资源）**：KPB本次修复包为 **`CARTIS-2.0-zoom-fix-20261027.apk`**；KPA及其他设备请先阅读顶部的验证范围。2GB设备请先阅读内存说明，`Source code` 不是安装包。
 3. 在掌机的文件管理器里找到 APK，点开安装。如果安卓询问是否允许安装，按提示允许。
 4. 已经装过 CARTIS 的用户，直接覆盖安装即可。**不要先卸载，也不要点“清除数据”**，以免丢失配置。
 
