@@ -37,27 +37,55 @@ def fetch_counts():
 
 def pixel_number(number):
     value = str(number)
-    unit = min(7, 126 / max(1, len(value)*4-1))
+    unit = min(6, 126 / max(1, len(value)*4-1))
     left = 190 - (len(value)*4-1)*unit/2
-    return ''.join(f'<rect x="{left+(i*4+x)*unit:g}" y="{86+y*unit:g}" width="{unit:g}" height="{unit:g}"/>' for i, digit in enumerate(value) for y, row in enumerate(DIGITS[digit]) for x, bit in enumerate(row) if bit == '1')
+    return ''.join(f'<rect x="{left+(i*4+x)*unit:g}" y="{105+y*unit:g}" width="{unit:g}" height="{unit:g}"/>' for i, digit in enumerate(value) for y, row in enumerate(DIGITS[digit]) for x, bit in enumerate(row) if bit == '1')
 
 def console(label, number, subtitle):
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="380" height="222" viewBox="0 0 380 222" role="img" aria-labelledby="title desc">
-<title id="title">{escape(label)}：{number}</title><desc id="desc">紫色 GBA 掌机风格统计，每小时自动刷新</desc>
-<defs><linearGradient id="shell" x2="0" y2="1"><stop stop-color="#a69ae6"/><stop offset=".5" stop-color="#8270cb"/><stop offset="1" stop-color="#6550ad"/></linearGradient><linearGradient id="lcd" x2="0" y2="1"><stop stop-color="#ced7a5"/><stop offset="1" stop-color="#a6b77c"/></linearGradient><pattern id="grid" width="3" height="3" patternUnits="userSpaceOnUse"><path d="M3 0H0V3" fill="none" stroke="#53633b" stroke-opacity=".08" stroke-width=".6"/></pattern></defs>
-<path d="M27 44Q15 45 13 62L7 139Q6 158 24 166Q56 181 91 176L289 176Q324 181 356 166Q374 158 373 139L367 62Q365 45 353 44L301 30H79Z" fill="#241d40" opacity=".15" transform="translate(0 6)"/>
-<path d="M27 40Q15 41 13 58L7 135Q6 154 24 162Q56 177 91 172L289 172Q324 177 356 162Q374 154 373 135L367 58Q365 41 353 40L301 26H79Z" fill="url(#shell)" stroke="#51417f" stroke-width="2"/>
-<path d="M29 43L79 29H301L351 43" fill="none" stroke="#d1c8f8" stroke-width="3" stroke-linecap="round"/>
-<rect x="88" y="38" width="204" height="124" rx="13" fill="#302c43" stroke="#b0a1e5" stroke-width="2"/>
-<rect x="108" y="52" width="164" height="88" rx="3" fill="url(#lcd)" stroke="#171f20" stroke-width="3"/>
-<rect x="110" y="54" width="160" height="84" fill="url(#grid)"/>
-<g fill="#33452b" text-anchor="middle"><text x="190" y="74" font-family="sans-serif" font-size="12" font-weight="700" letter-spacing="2">{escape(label)}</text><g shape-rendering="crispEdges">{pixel_number(number)}</g><text x="190" y="133" font-family="monospace" font-size="6.5" letter-spacing="1.2">{subtitle}</text></g>
-<text x="190" y="154" text-anchor="middle" fill="#bdb8cc" font-family="monospace" font-size="8" font-style="italic" font-weight="bold" letter-spacing="2">CARTIS ADVANCE</text>
-<path d="M41 80H55V94H69V108H55V122H41V108H27V94H41Z" fill="#302e43" stroke="#544c75" stroke-width="2"/><path d="M44 82H52V97H66" fill="none" stroke="#797189" stroke-width="1.5"/><circle cx="48" cy="101" r="4" fill="#242336"/>
-<g fill="#342e4f" stroke="#554577" stroke-width="2"><circle cx="319" cy="107" r="11"/><circle cx="345" cy="91" r="11"/></g><g fill="#a69abb" font-family="sans-serif" font-size="9" text-anchor="middle"><text x="319" y="110">B</text><text x="345" y="94">A</text></g>
-<circle cx="307" cy="58" r="3" fill="#b9ef7c"/><text x="314" y="61" fill="#e0d9f6" font-size="5" font-family="monospace">POWER</text>
-<g stroke="#44375f" stroke-width="3" stroke-linecap="round"><path d="M310 137L316 145M320 134L326 142M330 131L336 139"/><path d="M50 144L61 141M51 154L62 151"/></g>
-<text x="190" y="199" text-anchor="middle" font-family="monospace" font-size="9" fill="#81769a" letter-spacing="2">{('RELEASE DOWNLOADS' if subtitle == 'INCLUDING ARCHIVED APK' else 'README VISITS')}</text>
+    download = subtitle == 'INCLUDING ARCHIVED APK'
+    shell, light, shade = ('#6536dc', '#b48bff', '#35147d') if download else ('#1647c7', '#68caff', '#102b7e')
+    stars = ''
+    for i in range(38):
+        x, y = (i*83+17)%372+4, (i*47+11)%214+4
+        color = ['#16339a','#5939cc','#3a8fff','#bb88ff'][i%4]
+        stars += f'<rect x="{x}" y="{y}" width="3" height="3" fill="{color}"/>'
+    for x,y in [(34,30),(334,36),(24,186),(350,181),(298,204)]:
+        stars += f'<path d="M{x-6} {y-2}h4v-4h4v4h4v4h-4v4h-4v-4h-4Z" fill="#ffe7a0"/>'
+    # Layered, stepped orbital ribbons match the cover's hard-edged nebulae.
+    orbit = ''
+    for offset, color in [(0,'#0b1b67'),(5,'#172caa'),(10,'#3449e3'),(15,'#7041db'),(20,'#a675ed')]:
+        orbit += f'<path d="M8 {84+offset}h12v-12h20v-12h32v-10h48v-8h62v-6h64v8h48v10h36v12h24v12h18" fill="none" stroke="{color}" stroke-width="5"/>'
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="380" height="222" viewBox="0 0 380 222" role="img" aria-labelledby="title desc" shape-rendering="crispEdges">
+<title id="title">{escape(label)}：{number}</title><desc id="desc">深蓝星空像素 GBA，奶黄色数字，每小时自动刷新</desc>
+<path d="M8 0H372V8H380V214H372V222H8V214H0V8H8Z" fill="#030620"/>
+<path d="M8 1H372V8H379V214H372V221H8V214H1V8H8Z" fill="none" stroke="#17215c" stroke-width="2"/>
+{stars}{orbit}
+<path d="M20 156h16v12h32v12h52v8h64v8h72v-8h48v-8h32v-12h24" fill="none" stroke="#152b93" stroke-width="6"/>
+<path d="M34 162h16v12h32v12h52v8h64v8h56" fill="none" stroke="#6437c7" stroke-width="4"/>
+<path d="M50 62H78V50H302V62H330V72H350V84H362V158H350V170H330V182H50V170H30V158H18V84H30V72H50Z" fill="#010314"/>
+<path d="M50 66H82V54H298V66H330V76H346V88H358V154H346V166H326V178H54V166H34V154H22V88H34V76H50Z" fill="{shade}"/>
+<path d="M50 66H82V54H298V66H330V76H346V88H354V146H342V158H322V170H58V158H38V146H26V88H38V76H50Z" fill="{shell}"/>
+<path d="M50 66H82V54H298V66H330V76H342V84" fill="none" stroke="{light}" stroke-width="4"/>
+<path d="M38 146v8h20v12h264v-12h20v-8" fill="none" stroke="#24115e" stroke-width="4"/>
+<path d="M86 62H294V70H302V158H294V166H86V158H78V70H86Z" fill="#070921"/>
+<path d="M90 70H290V74H294V150H290V154H90V150H86V74H90Z" fill="#151947"/>
+<rect x="102" y="78" width="176" height="70" fill="#070d36"/>
+<path d="M104 80H276V84H108V146H104Z" fill="#243a89"/>
+<path d="M110 126H270M110 134H270M110 142H270" stroke="#111e51" stroke-width="1"/>
+<text x="190" y="96" text-anchor="middle" fill="#a8cfff" font-family="sans-serif" font-size="11" font-weight="bold" letter-spacing="3">{escape(label)}</text>
+<g fill="#ffe9a8">{pixel_number(number)}</g>
+<text x="190" y="160" text-anchor="middle" fill="#9a9ddd" font-family="monospace" font-size="5.5" font-weight="bold" letter-spacing="2">CARTIS ADVANCE</text>
+<path d="M42 94H54V106H66V118H54V130H42V118H30V106H42Z" fill="#080b29"/>
+<path d="M44 96H52V108H64V110H50V98H44Z" fill="#bfc9ff"/>
+<path d="M44 110H50V116H44Z" fill="#5865a6"/>
+<path d="M310 109H322V113H326V125H322V129H310V125H306V113H310Z M336 91H348V95H352V107H348V111H336V107H332V95H336Z" fill="#080b29"/>
+<path d="M311 112H321V122H311Z M337 94H347V104H337Z" fill="#f0ddff"/>
+<path d="M317 112H321V122H317Z M343 94H347V104H343Z" fill="#b491f4"/>
+<rect x="310" y="78" width="4" height="4" fill="#ffe7a0"/>
+<path d="M46 144h12v4H46Z M48 154h12v4H48Z" fill="#c9b8ff"/>
+<path d="M310 144h4v4h4v4h-4v-4h-4Z M320 140h4v4h4v4h-4v-4h-4Z M330 136h4v4h4v4h-4v-4h-4Z" fill="#080b29"/>
+<text x="190" y="24" text-anchor="middle" fill="#d7dfff" font-family="monospace" font-size="7" letter-spacing="3">C A R T I S · S T A T S</text>
+<text x="190" y="210" text-anchor="middle" fill="#a8a3ec" font-family="monospace" font-size="6" letter-spacing="1.5">{('DOWNLOADS · ARCHIVE + LIVE' if download else 'README VIEWS · SINCE 2026.10.25')}</text>
 </svg>'''
 
 def main():
