@@ -1,15 +1,6 @@
-name: Update GBA README stats
+name: Rebuild fallback GBA README images
+# Dynamic README images are served by Vercel. This only regenerates local fallbacks.
 on:
-  schedule:
-    - cron: '7,22,37,52 * * * *'
-  release:
-    types: [published, edited]
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/readme-stats.yml'
-      - 'scripts/update_readme_stats.py'
-      - 'docs/images/stats/historical-downloads.json'
   workflow_dispatch:
 permissions:
   contents: write

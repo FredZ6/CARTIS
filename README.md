@@ -9,11 +9,11 @@ CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立
 
 [下载最新版（KPB 实测 · code18）](https://github.com/FredZ6/CARTIS/releases/download/v2.0-font-icon-20261027/CARTIS-2.0-transparent-icon-20261027.apk) · [最新发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-font-icon-20261027) · [新手安装教程](#第一次用按这个顺序来)
 
-<a href="https://github.com/FredZ6/CARTIS/releases"><img src="docs/images/stats/gba-downloads.svg" width="340" alt="GBA 显示屏：发布附件下载次数"></a>
-<a href="https://hits.sh/github.com/FredZ6/kpb-socket/"><img src="docs/images/stats/gba-views.svg" width="340" alt="GBA 显示屏：README 访问次数"></a>
+<a href="https://github.com/FredZ6/CARTIS/releases"><img src="https://cartis-readme-counters.vercel.app/downloads.svg" width="340" alt="GBA 显示屏：发布附件下载次数"></a>
+<a href="https://hits.sh/github.com/FredZ6/kpb-socket/"><img src="https://cartis-readme-counters.vercel.app/views.svg" width="340" alt="GBA 显示屏：README 访问次数"></a>
 <img src="https://hits.sh/github.com/FredZ6/kpb-socket.svg?label=README%20views&amp;color=007ec6" width="1" height="1" alt="">
 
-<sub>每 15 分钟尝试刷新，发布更新时也会触发；屏幕标注最近成功更新时间（UTC）。GitHub 调度及图片缓存可能延迟，数字不是实时值。下载次数包含删除前备份的历史 APK 下载记录（130 次）及现存 GitHub Releases 附件下载，不含网盘下载；下载次数不等同安装人数；访问次数沿用原计数，不代表独立访客人数。</sub>
+<sub>统计图在被访问时生成，数据缓存约 15 分钟，不再依赖定时任务；屏幕标注最近读取时间（UTC）。GitHub 图片缓存可能造成额外延迟，数字不是实时值；数据源暂时不可用时会显示 OFFLINE 和最后可用记录。下载次数包含删除前备份的历史 APK 下载记录（130 次）及现存 GitHub Releases 附件下载，不含网盘下载；下载次数不等同安装人数；访问次数沿用原计数，不代表独立访客人数。</sub>
 
 ## 目录
 
