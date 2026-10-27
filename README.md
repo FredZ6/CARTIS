@@ -9,8 +9,11 @@ CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立
 
 [下载缩放修复版（KPB实测）](https://github.com/FredZ6/CARTIS/releases/download/v2.0-zoom-fix-20261027/CARTIS-2.0-zoom-fix-20261027.apk) · [最新发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.0-zoom-fix-20261027) · [新手安装教程](#第一次用按这个顺序来)
 
-[![发布附件累计下载量](https://img.shields.io/github/downloads/FredZ6/CARTIS/total?label=Downloads&color=2563eb)](https://github.com/FredZ6/CARTIS/releases)
-[![README 访问次数](https://hits.sh/github.com/FredZ6/kpb-socket.svg?label=README%20views&color=007ec6)](https://hits.sh/github.com/FredZ6/kpb-socket/)
+<a href="https://github.com/FredZ6/CARTIS/releases"><img src="docs/images/stats/gba-downloads.svg" width="340" alt="GBA 显示屏：发布附件下载次数"></a>
+<a href="https://hits.sh/github.com/FredZ6/kpb-socket/"><img src="docs/images/stats/gba-views.svg" width="340" alt="GBA 显示屏：README 访问次数"></a>
+<img src="https://hits.sh/github.com/FredZ6/kpb-socket.svg?label=README%20views&amp;color=007ec6" width="1" height="1" alt="">
+
+<sub>屏幕数字每小时自动刷新，任务调度和图片缓存可能造成延迟。下载次数为现存 GitHub Releases 附件合计，不含已删除附件及网盘下载；访问次数沿用原计数，不代表独立访客人数。</sub>
 
 ## 目录
 
