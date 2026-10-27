@@ -12,6 +12,26 @@ CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立
 [![发布附件累计下载量](https://img.shields.io/github/downloads/FredZ6/CARTIS/total?label=Downloads&color=2563eb)](https://github.com/FredZ6/CARTIS/releases)
 [![README 访问次数](https://hits.sh/github.com/FredZ6/kpb-socket.svg?label=README%20views&color=007ec6)](https://hits.sh/github.com/FredZ6/kpb-socket/)
 
+## 目录
+
+- [软件介绍](#cartis-是什么)
+- [2.0 已完成的改动](#相较原版-socket20-已完成哪些改动)
+- [性能实测对比](#性能改进以测试记录为准)
+- [KPB 实机功能展示](#kpb-实机功能展示)
+- [安装与升级须知](#安装与升级前先看)
+- [开发来源与致谢](#开发来源与致谢)
+- [3.0 开发计划](#接下来30-开发计划)
+- [首次使用指南](#第一次用按这个顺序来)
+- [第一步：安装 CARTIS](#第一步安装-cartis)
+- [第二步：安装模拟器与核心](#第二步先装好模拟器)
+- [第三步：整理游戏和封面](#第三步把游戏和封面放好)
+- [第四步：添加游戏平台](#第四步告诉-cartis-游戏在哪)
+- [日常操作与按键设置](#平时怎么操作)
+- [常见问题](#遇到问题先看这里)
+- [仓库改名与旧链接](#仓库名称与旧链接)
+
+---
+
 ## CARTIS 是什么？
 
 **CARTIS** 源自 **Cartridge（游戏卡带）** 与 **TARDIS（时空机器）** 的结合。Cartridge 承载着电子游戏黄金年代的童年回忆；TARDIS 则寄托着穿越时间与空间、探索无限世界的想象。
