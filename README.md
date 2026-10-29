@@ -9,6 +9,8 @@ CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立
 
 [下载最新版 2.27（KPB 实测）](https://github.com/FredZ6/CARTIS/releases/download/v2.27/CARTIS-2.27.apk) · [最新发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.27) · [新手安装教程](#第一次用按这个顺序来)
 
+**百度网盘下载**：[CARTIS 2.27 安装包](https://pan.baidu.com/s/1CThKm8nin5pcrfILlXYy9Q?pwd=6tfk)，提取码：`6tfk`。
+
 <a href="https://github.com/FredZ6/CARTIS/releases"><img src="https://cartis-readme-counters.vercel.app/downloads.svg" width="340" alt="GBA 显示屏：发布附件下载次数"></a>
 <a href="https://hits.sh/github.com/FredZ6/kpb-socket/"><img src="https://cartis-readme-counters.vercel.app/views.svg" width="340" alt="GBA 显示屏：README 访问次数"></a>
 <img src="https://hits.sh/github.com/FredZ6/kpb-socket.svg?label=README%20views&amp;color=007ec6" width="1" height="1" alt="">
