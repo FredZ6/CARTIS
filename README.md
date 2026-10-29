@@ -1,3 +1,7 @@
+<p align="right">
+  <strong>简体中文</strong> | <a href="README.en.md"><img src="https://img.shields.io/badge/English-Read%20in%20English-2563eb?style=for-the-badge" alt="Read in English"></a>
+</p>
+
 ![CARTIS — A Portal to Every Game Era](docs/images/cartis-cover.png)
 
 # CARTIS 2.27
