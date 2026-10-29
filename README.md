@@ -7,6 +7,14 @@
 
 CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立体卡带和主机模型浏览游戏，找回翻选卡带的乐趣，再通过已安装的模拟器进入游戏。
 
+## CARTIS 是什么？
+
+**CARTIS** 源自 **Cartridge（游戏卡带）** 与 **TARDIS（时空机器）** 的结合。Cartridge 承载着电子游戏黄金年代的童年回忆；TARDIS 则寄托着穿越时间与空间、探索无限世界的想象。
+
+CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为通往过去的时空入口。** 从 Game Boy 的黑白像素，到 GBA 的绚丽色彩，再到 NDS 与 PSP 的经典世界，连接属于不同年代的游戏回忆。
+
+它负责整理、展示和启动游戏；真正运行游戏的是独立安装的模拟器。**安装包不包含游戏、BIOS、模拟器或 RetroArch 核心。**
+
 [下载最新版 2.27（KPB 实测）](https://github.com/FredZ6/CARTIS/releases/download/v2.27/CARTIS-2.27.apk) · [最新发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.27) · [新手安装教程](#第一次用按这个顺序来)
 
 **百度网盘下载**：[CARTIS 2.27 安装包](https://pan.baidu.com/s/1CThKm8nin5pcrfILlXYy9Q?pwd=6tfk)，提取码：`6tfk`。
@@ -70,13 +78,6 @@ CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立
 
 本轮另通过126项功能断言、36项深浅色底栏检查、8项模型/应用页检查、16项红绿按钮保色检查、60项主题与24项合集存储检查。较早的按键修复记录见[历史回归报告](docs/reports/2026-10-28-keybindings.md)，模型缩放说明见[平台缩放修复报告](docs/reports/2026-10-27-camera-zoom-fix.md)。
 
-## CARTIS 是什么？
-
-**CARTIS** 源自 **Cartridge（游戏卡带）** 与 **TARDIS（时空机器）** 的结合。Cartridge 承载着电子游戏黄金年代的童年回忆；TARDIS 则寄托着穿越时间与空间、探索无限世界的想象。
-
-CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为通往过去的时空入口。** 从 Game Boy 的黑白像素，到 GBA 的绚丽色彩，再到 NDS 与 PSP 的经典世界，连接属于不同年代的游戏回忆。
-
-它负责整理、展示和启动游戏；真正运行游戏的是独立安装的模拟器。**安装包不包含游戏、BIOS、模拟器或 RetroArch 核心。**
 
 ## 相较原版 Socket，2.0 已完成哪些改动？
 
