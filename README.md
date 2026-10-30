@@ -11,6 +11,15 @@
 
 CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立体卡带和主机模型浏览游戏，找回翻选卡带的乐趣，再通过已安装的模拟器进入游戏。
 
+遥远的约定 获得的服装很搭沙奈朵哎[星星眼][喜欢]
+
+附上：
+2个闪光拉鲁拉斯
+
+PMH1.lQABAJUAAAAIIgjkCCIMYv8AAAALBwWS_wAAAIgBLQKgAAAAAP8VMNnlhS0AAAT8_AAAAAAA____Pw
+
+PMH1.AgABAAIAAAAIIgjkCCIMYv8AAAALBwWS_wAAAIgBuwKgAAAAAP8VDrQVmS0E_AD8AAAAAAAA____Pw
+
 ## CARTIS 是什么？
 
 **CARTIS** 源自 **Cartridge（游戏卡带）** 与 **TARDIS（时空机器）** 的结合。Cartridge 承载着电子游戏黄金年代的童年回忆；TARDIS 则寄托着穿越时间与空间、探索无限世界的想象。
