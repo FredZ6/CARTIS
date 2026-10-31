@@ -4,7 +4,7 @@
 
 ![CARTIS — A Portal to Every Game Era](docs/images/cartis-cover.png)
 
-# CARTIS 2.27
+# CARTIS 2.28
 
 **A Portal to Every Game Era**
 
@@ -18,9 +18,11 @@ CARTIS brings these ideas together: **every cartridge becomes a doorway to anoth
 
 CARTIS organizes, displays and launches your games. Separate emulators run them. **The APK does not include games, BIOS files, emulators or RetroArch cores.**
 
-[Download 2.27 (tested on KPB)](https://github.com/FredZ6/CARTIS/releases/download/v2.27/CARTIS-2.27.apk) · [Release notes](https://github.com/FredZ6/CARTIS/releases/tag/v2.27) · [Getting started](#first-time-start-here)
+[Download 2.28 (tested on KPB)](https://github.com/FredZ6/CARTIS/releases/download/v2.28/CARTIS-2.28.apk) · [Release notes](https://github.com/FredZ6/CARTIS/releases/tag/v2.28) · [Getting started](#first-time-start-here)
 
-**Baidu Netdisk mirror:** [CARTIS 2.27 APK](https://pan.baidu.com/s/1CThKm8nin5pcrfILlXYy9Q?pwd=6tfk), extraction code: `6tfk`.
+**Baidu Netdisk mirror (archived 2.27):** [CARTIS 2.27 APK](https://pan.baidu.com/s/1CThKm8nin5pcrfILlXYy9Q?pwd=6tfk), extraction code: `6tfk`.
+
+> **The Baidu Netdisk version may lag behind. Use [GitHub Releases](https://github.com/FredZ6/CARTIS/releases/latest) for the latest version.** The retained mirror link is for 2.27 and has not been confirmed to include the 2.28 cover fixes.
 
 <a href="https://github.com/FredZ6/CARTIS/releases"><img src="https://cartis-readme-counters.vercel.app/downloads.svg" width="340" alt="GBA display showing release asset downloads"></a>
 <a href="https://hits.sh/github.com/FredZ6/kpb-socket/"><img src="https://cartis-readme-counters.vercel.app/views.svg" width="340" alt="GBA display showing README views"></a>
@@ -48,9 +50,20 @@ CARTIS organizes, displays and launches your games. Separate emulators run them.
 
 ---
 
-## Latest update: 2.27 cross-platform collections, consistent menus and faster page opening
+## Latest update: 2.28 Chinese-path cover matching and cache fixes
 
-The latest release is **CARTIS 2.27 (versionCode 27)**, packaged as **`CARTIS-2.27.apk`**. It builds on 2.26, incorporates the 2.25 colour fixes, and has passed KPB feature, interface and input-response regression checks. This complete release has not been retested on KPA or other devices. It keeps the original package name and signing certificate, so you can upgrade in place and retain your configuration. Do not uninstall the previous version or clear its data first.
+The latest release is **CARTIS 2.28 (versionCode 28)**, packaged as **`CARTIS-2.28.apk`**. It fixes local cover matching on top of the official 2.27 release and retains its search, collections, controls and interface. This package has been tested on KPB; KPA and other devices have not completed this release's regression checks.
+
+- **Covers in Chinese-named folders now match:** the cover importer correctly decodes paths returned by Android's system folder picker and finds the game's local `lmgs` images.
+- **Stale automatic cover images no longer cross over:** generated cache names include the source path and modification time, avoiding reuse of another pack's or an older test's images for a game with the same name. Manually selected covers are retained.
+- **Existing libraries recover automatically:** install over the current app without uninstalling or clearing data. Let the first background matching pass finish, then close and reopen CARTIS to reload the current cartridge's cover. There is no need to delete/re-add platforms or download the games again.
+- **Verified on KPB:** all 809 local covers (536 NES, 108 GB and 165 GBC) matched their source images pixel for pixel. The original 504 GBA cover images were preserved. All 222 regression assertions passed, and favourites, collections, key bindings and existing settings were retained.
+
+[Download CARTIS-2.28.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.28/CARTIS-2.28.apk) · [Full release notes](https://github.com/FredZ6/CARTIS/releases/tag/v2.28) · [SHA-256 checksums](https://github.com/FredZ6/CARTIS/releases/download/v2.28/SHA256SUMS.txt) · [Cover-fix verification report, in Chinese](docs/reports/2026-10-31-cover-fix.md)
+
+## 2.27 feature foundation: cross-platform collections, consistent menus and faster page opening
+
+The previous official release is **CARTIS 2.27 (versionCode 27)**, packaged as **`CARTIS-2.27.apk`**. It builds on 2.26, incorporates the 2.25 colour fixes, and has passed KPB feature, interface and input-response regression checks. This complete release has not been retested on KPA or other devices. It keeps the original package name and signing certificate, so you can upgrade in place and retain your configuration. Do not uninstall the previous version or clear its data first.
 
 - **Search every platform and jump to the cartridge:** search covers all added platforms. Tap a result or press A to select that game's platform and cartridge without launching it. You can then favourite it or change its appearance.
 - **Local and global collection pages:** Select opens collections for the current platform by default. Use L/R to switch pages. A global collection can contain games from different platforms; global favourites and recently played views also span platforms.
@@ -140,7 +153,7 @@ These are screenshots from a KPB. The [complete gallery contains 27 screenshots]
 
 - **Existing Socket BBM / Replay / CARTIS users:** this APK keeps the original package name and signing certificate. Upgrade in place; do not uninstall or clear app data. Back up your configuration and saves before upgrading.
 - **KPB 3 GB:** the main tested device. At a previously verified stable checkpoint with the existing quality settings, the stationary GBA cartridge page measured about **41.19 FPS**, and switching measured about **39.34 FPS**. Results vary by scene, device state and library; these are **not stable 60 FPS** claims.
-- **KPA:** layout adaptation is implemented and historical releases were checked at 960×640. The complete 2.27 package has been tested on KPB only and has not been retested on KPA. Other displays use adaptive layouts, but adjustments may still be needed.
+- **KPA:** layout adaptation is implemented and historical releases were checked at 960×640. The complete 2.28 package has been tested on KPB only and has not been retested on KPA. Other displays use adaptive layouts, but adjustments may still be needed.
 - **KPB 2 GB:** not tested on a physical device for this release. Caching eight models uses substantial memory; High Frame Rate is not a low-memory mode. Back up first and choose your version carefully.
 - **Quality options:** High Detail and High Frame Rate can be selected separately. Emulator compatibility and in-game frame rates depend on the chosen emulator, core and device.
 
@@ -192,8 +205,8 @@ CARTIS is the interface for choosing and launching games. The emulators run them
 
 ## Step 1: Install CARTIS
 
-1. [Download the latest APK](https://github.com/FredZ6/CARTIS/releases/download/v2.27/CARTIS-2.27.apk) or open the [latest release page](https://github.com/FredZ6/CARTIS/releases/tag/v2.27).
-2. Under **Assets**, choose **`CARTIS-2.27.apk`** (versionCode 27), the package tested on KPB. KPA and other-device users should read the validation scope above; users of 2 GB devices should also read the memory notes. `Source code` is not the installer.
+1. [Download the latest APK](https://github.com/FredZ6/CARTIS/releases/download/v2.28/CARTIS-2.28.apk) or open the [latest release page](https://github.com/FredZ6/CARTIS/releases/tag/v2.28).
+2. Under **Assets**, choose **`CARTIS-2.28.apk`** (versionCode 28), the package tested on KPB. KPA and other-device users should read the validation scope above; users of 2 GB devices should also read the memory notes. `Source code` is not the installer.
 3. Open the APK in the handheld's file manager. If Android asks for permission to install apps, follow its prompts.
 4. Existing users should install over the previous version. **Do not uninstall or clear app data first**, or you may lose your configuration.
 
@@ -408,7 +421,7 @@ These settings affect CARTIS only. Configure fast-forward, save states and other
 | Problem | What to check |
 | --- | --- |
 | Games do not appear | Did you select the actual game folder? Are files extracted? Was access granted? Is the format supported? |
-| Games appear without covers | Are images in that platform's `lmgs` folder? Do the base filenames match? Can the images be opened normally? |
+| Games appear without covers | Update to 2.28 for the Chinese-path fix. Check that readable, matching images are in the platform's `lmgs` folder. Let the first matching pass finish, then reopen CARTIS; do not delete the platform. |
 | Newly added games are missing | Rescan from platform settings. Do not delete your existing configuration just because you copied in new files. |
 | A changed cover still looks old | Reopen CARTIS; if needed, select the cover manually in the game's customization screen. |
 | A game will not launch | Test it directly in the emulator first, then check CARTIS's emulator, core and launch-entry choices. |

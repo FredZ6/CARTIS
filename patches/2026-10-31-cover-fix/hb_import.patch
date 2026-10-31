@@ -1,0 +1,69 @@
+--- 2.27/hb_import.gd
++++ 2.28/hb_import.gd
+@@ -732,28 +732,36 @@
+ 			# 本会话已确认（有效 custom 或已应用）→ 跳过全部文件 I/O
+ 			if _lmgs_ok.has(lkey):
+ 				continue
+-			# 自定义封面失效（文件已删，或扩展名 .png 但内容不是 PNG 的伪装文件）
+-			# → 清除并重配
++			# Preserve user-selected images. Generated covers must also match their
++			# source identity; old name-only caches can belong to another ROM pack.
+ 			var cpath := String(g.custom_support_image_path)
++			var custom_ok := cpath != '' and FileAccess.file_exists(cpath) and _file_is_png(cpath)
+ 			if cpath != '':
+-				if FileAccess.file_exists(cpath) and _file_is_png(cpath):
++				if custom_ok and not cpath.begins_with(COVER_ROOT):
+ 					_lmgs_ok[lkey] = true
+ 					continue
+-				g.custom_support_image_path = ''
+-				_log('lmgs stale custom cleared: %s' % cpath)
++				if not custom_ok:
++					g.custom_support_image_path = ''
++					_log('lmgs stale custom cleared: %s' % cpath)
+ 			var src := _index_lookup(index, base)
+ 			if src == '':
++				# Keep a usable generated cover when the original pack is unavailable.
++				if custom_ok:
++					_lmgs_ok[lkey] = true
++					continue
+ 				if not _miss_log.has(lkey):
+ 					_miss_log[lkey] = true
+ 					_log('lmgs miss: %s' % lkey)
+ 				continue
+ 			# custom 封面一律转存为真 PNG（按内容识别解码，宽容扩展名伪装）；
+ 			# v8：转存重活入队工作线程，主线程只记录待应用清单
+-			var dst := cover_dir + base.md5_text() + '.png'
++			var source_key := (src + '|' + str(FileAccess.get_modified_time(src))).md5_text()
++			var dst := cover_dir + base.md5_text() + '-' + source_key + '.png'
+ 			if FileAccess.file_exists(dst) and _file_is_png(dst):
+ 				g.custom_support_image_path = dst
+ 				_lmgs_ok[lkey] = true
+-				changed += 1
++				if cpath != dst:
++					changed += 1
+ 				continue
+ 			if not info.has(dst):
+ 				var job_t := 'copy' if _file_is_png(src) else 'convert'
+@@ -936,19 +944,9 @@
+ 
+ 
+ func uri_decode(s: String) -> String:
+-	var out := ''
+-	var i := 0
+-	while i < s.length():
+-		var c := s[i]
+-		if c == '%' and i + 2 < s.length():
+-			var hexs := s.substr(i + 1, 2)
+-			if hexs.is_valid_hex_number():
+-				out += String.chr(hexs.hex_to_int())
+-				i += 3
+-				continue
+-		out += c
+-		i += 1
+-	return out
++	# Decode percent escapes as UTF-8 bytes, not individual Unicode characters.
++	# Keep this wrapper for existing SAF callers and decode exactly once.
++	return s.uri_decode()
+ 
+ 
+ ## 找 lmgs 文件夹：roms 内部 + 向上最多 3 级祖先目录（如 roms/FC 选的是深层子目录）

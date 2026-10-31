@@ -4,7 +4,7 @@
 
 ![CARTIS — A Portal to Every Game Era](docs/images/cartis-cover.png)
 
-# CARTIS 2.27
+# CARTIS 2.28
 
 **A Portal to Every Game Era**  
 一扇传送门，通往每一个游戏时代。
@@ -28,9 +28,11 @@ CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为�
 
 它负责整理、展示和启动游戏；真正运行游戏的是独立安装的模拟器。**安装包不包含游戏、BIOS、模拟器或 RetroArch 核心。**
 
-[下载最新版 2.27（KPB 实测）](https://github.com/FredZ6/CARTIS/releases/download/v2.27/CARTIS-2.27.apk) · [最新发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.27) · [新手安装教程](#第一次用按这个顺序来)
+[下载最新版 2.28（KPB 实测）](https://github.com/FredZ6/CARTIS/releases/download/v2.28/CARTIS-2.28.apk) · [最新发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.28) · [新手安装教程](#第一次用按这个顺序来)
 
-**百度网盘下载**：[CARTIS 2.27 安装包](https://pan.baidu.com/s/1CThKm8nin5pcrfILlXYy9Q?pwd=6tfk)，提取码：`6tfk`。
+**百度网盘下载（2.27 历史镜像）**：[CARTIS 2.27 安装包](https://pan.baidu.com/s/1CThKm8nin5pcrfILlXYy9Q?pwd=6tfk)，提取码：`6tfk`。
+
+> **百度网盘的版本可能落后，最新版请以 [GitHub Releases](https://github.com/FredZ6/CARTIS/releases/latest) 为准。** 当前保留的网盘链接对应2.27，不代表已同步本次2.28封面修复。
 
 <a href="https://github.com/FredZ6/CARTIS/releases"><img src="https://cartis-readme-counters.vercel.app/downloads.svg" width="340" alt="GBA 显示屏：发布附件下载次数"></a>
 <a href="https://hits.sh/github.com/FredZ6/kpb-socket/"><img src="https://cartis-readme-counters.vercel.app/views.svg" width="340" alt="GBA 显示屏：README 访问次数"></a>
@@ -60,9 +62,20 @@ CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为�
 
 ---
 
-## 最新更新：2.27 全平台合集、统一菜单与按键响应优化
+## 最新更新：2.28 中文路径封面匹配与缓存修复
 
-当前最新版为 **CARTIS 2.27（versionCode 27）**，安装包 **`CARTIS-2.27.apk`**。以2.26为基础，合并2.25配色修复，并完成KPB实机功能、界面与按键响应回归。KPA及其他设备尚未完成此整包的实机验证。沿用原包名与签名，可覆盖安装保留配置；不要先卸载或清除数据。
+当前最新版为 **CARTIS 2.28（versionCode 28）**，安装包 **`CARTIS-2.28.apk`**。基于正式2.27修复本地封面匹配，保留原有搜索、合集、按键与界面功能。已在KPB实机验证；KPA及其他设备尚未完成此整包回归。
+
+- **修复中文目录下有游戏却没有封面**：通过安卓系统文件选择器添加含中文的目录时，封面模块现在正确解析路径，能够找到游戏包中的 `lmgs` 图片。
+- **修复旧封面缓存串图**：自动封面缓存按来源路径与修改时间区分，避免同名游戏继续使用旧游戏包或测试图片；保留手动指定的封面。
+- **已有游戏自动补匹配**：直接覆盖安装，不要卸载或清除数据。首次打开请等待后台匹配完成，再关闭并重新打开 CARTIS，让当前卡带重新加载封面；不需要删除平台重加或重新下载游戏。
+- **KPB验证通过**：NES 536、GB 108、GBC 165，共809张封面逐张与本地源图比较一致；原有504个GBA封面内容保持不变。222项回归检查通过，收藏、合集、按键与原设置保留。
+
+[直接下载 CARTIS-2.28.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.28/CARTIS-2.28.apk) · [完整发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.28) · [SHA-256 校验文件](https://github.com/FredZ6/CARTIS/releases/download/v2.28/SHA256SUMS.txt) · [封面修复测试记录](docs/reports/2026-10-31-cover-fix.md)
+
+## 2.27 功能基础：全平台合集、统一菜单与按键响应优化
+
+上一正式版为 **CARTIS 2.27（versionCode 27）**，安装包 **`CARTIS-2.27.apk`**。以2.26为基础，合并2.25配色修复，并完成KPB实机功能、界面与按键响应回归。KPA及其他设备尚未完成此整包的实机验证。沿用原包名与签名，可覆盖安装保留配置；不要先卸载或清除数据。
 
 - **全平台搜索，选择后定位**：搜索覆盖所有已添加平台；点击结果或按A，跳到对应平台与游戏卡带，不直接运行游戏，可继续收藏或修改卡带外观。
 - **本平台 / 全平台两页合集**：Select默认进入本平台；L/R切页。全平台合集可同时收纳不同平台的游戏，收藏与最近游玩也可跨平台查看。
@@ -153,7 +166,7 @@ CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为�
 
 - **已有 Socket BBM / Replay / CARTIS 的用户**：本次安装包沿用原包名与签名，可覆盖安装；不要先卸载或清除数据，升级前建议备份自己的配置与存档。
 - **KPB 3GB**：当前主要实测设备。保留现有画质设置的稳定检查点中，GBA 卡带页静止约 **41.19 FPS**，左右切换约 **39.34 FPS**；具体帧率随场景、设备状态与游戏库变化，**不是稳定 60 FPS**。
-- **KPA**：已完成适配；历史版本已按 960×640 完成布局检查；当前2.27仅在KPB完成整包实机验证，尚未在 KPA 重新验证。其他屏幕也采用自适应布局，但不承诺所有设备都无须调整。
+- **KPA**：已完成适配；历史版本已按 960×640 完成布局检查；当前2.28仅在KPB完成整包实机验证，尚未在 KPA 重新验证。其他屏幕也采用自适应布局，但不承诺所有设备都无须调整。
 - **KPB 2GB**：本版未做实机验证。八模型后台缓存会占用较多内存，“高帧数”不等于低内存模式，请先备份并谨慎选择版本。
 - **性能选项**：可以分别选择“高精细”与“高帧数”；游戏画面中的帧率和模拟器兼容性由所选模拟器、核心与设备共同决定。
 
@@ -205,8 +218,8 @@ CARTIS 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 
 ## 第一步：安装 CARTIS
 
-1. [直接下载最新版 APK](https://github.com/FredZ6/CARTIS/releases/download/v2.27/CARTIS-2.27.apk)，或打开 [最新版安装包下载页](https://github.com/FredZ6/CARTIS/releases/tag/v2.27)。
-2. 找到 **Assets（资源）**：当前 KPB 实测安装包为 **`CARTIS-2.27.apk`**（versionCode 27）；KPA 及其他设备请先阅读顶部的验证范围。2GB 设备请先阅读内存说明，`Source code` 不是安装包。
+1. [直接下载最新版 APK](https://github.com/FredZ6/CARTIS/releases/download/v2.28/CARTIS-2.28.apk)，或打开 [最新版安装包下载页](https://github.com/FredZ6/CARTIS/releases/tag/v2.28)。
+2. 找到 **Assets（资源）**：当前 KPB 实测安装包为 **`CARTIS-2.28.apk`**（versionCode 28）；KPA 及其他设备请先阅读顶部的验证范围。2GB 设备请先阅读内存说明，`Source code` 不是安装包。
 3. 在掌机的文件管理器里找到 APK，点开安装。如果安卓询问是否允许安装，按提示允许。
 4. 已经装过 CARTIS 的用户，直接覆盖安装即可。**不要先卸载，也不要点“清除数据”**，以免丢失配置。
 
@@ -421,7 +434,7 @@ Select默认显示本平台合集；在合集页按 **L / R** 或触摸顶部页
 | 遇到的情况 | 先检查什么 |
 | --- | --- |
 | 看不到游戏 | 平台选的是否是游戏目录？文件是否已解压？是否允许读取？格式是否支持？ |
-| 有游戏但没封面 | 图片是否放在该平台的 `lmgs` 里？名字是否与原游戏文件一致？图片能否正常打开？ |
+| 有游戏但没封面 | 先升级2.28修复中文目录解析；确认图片放在该平台的 `lmgs` 里、与游戏同名且能正常打开。等待首次后台匹配完成后重新打开 CARTIS，无需删除平台。 |
 | 加了新游戏却没出现 | 回平台设置重新扫描；不要只复制文件后就删除原配置。 |
 | 换了封面还是旧图 | 先重新打开 CARTIS；必要时在游戏自定义界面手动选择封面。 |
 | 游戏打不开 | 先直接在模拟器里试。模拟器能运行后，再检查 CARTIS 里的模拟器、核心和启动设置。 |
