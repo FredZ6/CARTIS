@@ -15,6 +15,10 @@ CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立
 
 附上：
 2个闪光拉鲁拉斯
+宝可梦水银百科
+https://sum-light.github.io/azoth-wiki/
+
+密钥：PMH1._wh_CIQAAAAIpQfjETAAAAD_AAAAAAAAAAAAAI8DAAAQJwAAAEYAUSEjmwMAAAAAAAAAAAAA____Pw
 
 PMH1.lQABAJUAAAAIIgjkCCIMYv8AAAALBwWS_wAAAIgBLQKgAAAAAP8VMNnlhS0AAAT8_AAAAAAA____Pw
 
