@@ -4,7 +4,7 @@
 
 ![CARTIS — A Portal to Every Game Era](docs/images/cartis-cover.png)
 
-# CARTIS 2.28
+# CARTIS 2.44
 
 **A Portal to Every Game Era**  
 一扇传送门，通往每一个游戏时代。
@@ -18,11 +18,6 @@ CARTIS 是基于 **Socket 0.6** 修改开发的安卓掌机游戏前端。用立
 宝可梦水银百科
 https://sum-light.github.io/azoth-wiki/
 
-密钥：PMH1._wh_CIQAAAAIpQfjETAAAAD_AAAAAAAAAAAAAI8DAAAQJwAAAEYAUSEjmwMAAAAAAAAAAAAA____Pw
-
-PMH1.lQABAJUAAAAIIgjkCCIMYv8AAAALBwWS_wAAAIgBLQKgAAAAAP8VMNnlhS0AAAT8_AAAAAAA____Pw
-
-PMH1.AgABAAIAAAAIIgjkCCIMYv8AAAALBwWS_wAAAIgBuwKgAAAAAP8VDrQVmS0E_AD8AAAAAAAA____Pw
 
 ## CARTIS 是什么？
 
@@ -32,11 +27,11 @@ CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为�
 
 它负责整理、展示和启动游戏；真正运行游戏的是独立安装的模拟器。**安装包不包含游戏、BIOS、模拟器或 RetroArch 核心。**
 
-[下载最新版 2.28（KPB 实测）](https://github.com/FredZ6/CARTIS/releases/download/v2.28/CARTIS-2.28.apk) · [最新发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.28) · [新手安装教程](#第一次用按这个顺序来)
+[下载最新版 2.44](https://github.com/FredZ6/CARTIS/releases/download/v2.44/CARTIS-2.44.apk) · [发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.44) · [新手安装教程](#第一次用按这个顺序来)
 
 **百度网盘下载（2.27 历史镜像）**：[CARTIS 2.27 安装包](https://pan.baidu.com/s/1CThKm8nin5pcrfILlXYy9Q?pwd=6tfk)，提取码：`6tfk`。
 
-> **百度网盘的版本可能落后，最新版请以 [GitHub Releases](https://github.com/FredZ6/CARTIS/releases/latest) 为准。** 当前保留的网盘链接对应2.27，不代表已同步本次2.28封面修复。
+> 百度网盘镜像保留在 2.27。当前版本以 [GitHub Releases](https://github.com/FredZ6/CARTIS/releases/latest) 为准。
 
 <a href="https://github.com/FredZ6/CARTIS/releases"><img src="https://cartis-readme-counters.vercel.app/downloads.svg" width="340" alt="GBA 显示屏：发布附件下载次数"></a>
 <a href="https://hits.sh/github.com/FredZ6/kpb-socket/"><img src="https://cartis-readme-counters.vercel.app/views.svg" width="340" alt="GBA 显示屏：README 访问次数"></a>
@@ -66,9 +61,19 @@ CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为�
 
 ---
 
-## 最新更新：2.28 中文路径封面匹配与缓存修复
+## 2.44 模型位置与展示模式修复
 
-当前最新版为 **CARTIS 2.28（versionCode 28）**，安装包 **`CARTIS-2.28.apk`**。基于正式2.27修复本地封面匹配，保留原有搜索、合集、按键与界面功能。已在KPB实机验证；KPA及其他设备尚未完成此整包回归。
+- PSP、PS1 和 PS2 在平台轮播中按可见模型居中。
+- 展示模式使用更大的展示区域，旋转时自动调整取景，返回后恢复轮播视角。
+- PS1 在轮播中保持合盖，进入展示模式后仍可拖动旋转整台主机。
+
+八种模型在多种屏幕尺寸下通过了 380 项自动检查。KPB 实机验证了最终安装包、Sony 三款主机的轮播位置、PS1 静态合盖，以及 PS1 和 PS2 的放大展示。其他设备的 2.44 实机回归仍待完成。
+
+[下载 CARTIS-2.44.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.44/CARTIS-2.44.apk) · [完整发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.44) · [SHA-256 校验文件](https://github.com/FredZ6/CARTIS/releases/download/v2.44/SHA256SUMS.txt)
+
+## 2.28 中文路径封面匹配与缓存修复
+
+当时发布的 **CARTIS 2.28（versionCode 28）** 使用安装包 **`CARTIS-2.28.apk`**。基于正式2.27修复本地封面匹配，保留原有搜索、合集、按键与界面功能。已在KPB实机验证；KPA及其他设备尚未完成此整包回归。
 
 - **修复中文目录下有游戏却没有封面**：通过安卓系统文件选择器添加含中文的目录时，封面模块现在正确解析路径，能够找到游戏包中的 `lmgs` 图片。
 - **修复旧封面缓存串图**：自动封面缓存按来源路径与修改时间区分，避免同名游戏继续使用旧游戏包或测试图片；保留手动指定的封面。
@@ -170,7 +175,7 @@ CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为�
 
 - **已有 Socket BBM / Replay / CARTIS 的用户**：本次安装包沿用原包名与签名，可覆盖安装；不要先卸载或清除数据，升级前建议备份自己的配置与存档。
 - **KPB 3GB**：当前主要实测设备。保留现有画质设置的稳定检查点中，GBA 卡带页静止约 **41.19 FPS**，左右切换约 **39.34 FPS**；具体帧率随场景、设备状态与游戏库变化，**不是稳定 60 FPS**。
-- **KPA**：已完成适配；历史版本已按 960×640 完成布局检查；当前2.28仅在KPB完成整包实机验证，尚未在 KPA 重新验证。其他屏幕也采用自适应布局，但不承诺所有设备都无须调整。
+- **KPA**：历史版本已按 960×640 完成布局检查。2.44 的 KPA 实机回归仍待完成。其他屏幕采用自适应布局，可能需要调整。
 - **KPB 2GB**：本版未做实机验证。八模型后台缓存会占用较多内存，“高帧数”不等于低内存模式，请先备份并谨慎选择版本。
 - **性能选项**：可以分别选择“高精细”与“高帧数”；游戏画面中的帧率和模拟器兼容性由所选模拟器、核心与设备共同决定。
 
@@ -222,8 +227,8 @@ CARTIS 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 
 ## 第一步：安装 CARTIS
 
-1. [直接下载最新版 APK](https://github.com/FredZ6/CARTIS/releases/download/v2.28/CARTIS-2.28.apk)，或打开 [最新版安装包下载页](https://github.com/FredZ6/CARTIS/releases/tag/v2.28)。
-2. 找到 **Assets（资源）**：当前 KPB 实测安装包为 **`CARTIS-2.28.apk`**（versionCode 28）；KPA 及其他设备请先阅读顶部的验证范围。2GB 设备请先阅读内存说明，`Source code` 不是安装包。
+1. [下载 CARTIS-2.44.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.44/CARTIS-2.44.apk)，也可以从 [最新版发布页](https://github.com/FredZ6/CARTIS/releases/latest) 的 **Assets（资源）** 下载 APK。已安装的 CARTIS 用户也可以在 **设置 → 关于 → 检查更新** 中升级。
+2. 打开 APK 安装。已有用户可直接覆盖安装以保留配置和存档。2 GB 设备请先阅读上方的内存说明。
 3. 在掌机的文件管理器里找到 APK，点开安装。如果安卓询问是否允许安装，按提示允许。
 4. 已经装过 CARTIS 的用户，直接覆盖安装即可。**不要先卸载，也不要点“清除数据”**，以免丢失配置。
 
@@ -231,7 +236,7 @@ CARTIS 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 
 想用 Home 键从游戏回到 CARTIS：去安卓的 **设置 → 默认应用 → 桌面应用**，选择 **CARTIS**。不同设备的菜单名称可能略有不同。
 
-字体可以在 **设置 → 调整** 中切换。当前最新版已修复更换字体后黑屏退出的问题，选择后直接刷新并自动保存。
+字体可以在 **设置 → 调整** 中切换。选择字体后，界面会刷新并自动保存设置。
 
 ## 第二步：先装好模拟器
 
@@ -438,7 +443,7 @@ Select默认显示本平台合集；在合集页按 **L / R** 或触摸顶部页
 | 遇到的情况 | 先检查什么 |
 | --- | --- |
 | 看不到游戏 | 平台选的是否是游戏目录？文件是否已解压？是否允许读取？格式是否支持？ |
-| 有游戏但没封面 | 先升级2.28修复中文目录解析；确认图片放在该平台的 `lmgs` 里、与游戏同名且能正常打开。等待首次后台匹配完成后重新打开 CARTIS，无需删除平台。 |
+| 有游戏但没封面 | 请使用 2.28 或更新版本；确认图片放在该平台的 `lmgs` 里、与游戏同名且能正常打开。等待首次后台匹配完成后重新打开 CARTIS，无需删除平台。 |
 | 加了新游戏却没出现 | 回平台设置重新扫描；不要只复制文件后就删除原配置。 |
 | 换了封面还是旧图 | 先重新打开 CARTIS；必要时在游戏自定义界面手动选择封面。 |
 | 游戏打不开 | 先直接在模拟器里试。模拟器能运行后，再检查 CARTIS 里的模拟器、核心和启动设置。 |
