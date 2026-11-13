@@ -4,7 +4,7 @@
 
 ![CARTIS — A Portal to Every Game Era](docs/images/cartis-cover.png)
 
-# CARTIS 2.44
+# CARTIS 2.59
 
 **A Portal to Every Game Era**  
 一扇传送门，通往每一个游戏时代。
@@ -27,7 +27,7 @@ CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为�
 
 它负责整理、展示和启动游戏；真正运行游戏的是独立安装的模拟器。**安装包不包含游戏、BIOS、模拟器或 RetroArch 核心。**
 
-[下载最新版 2.44](https://github.com/FredZ6/CARTIS/releases/download/v2.44/CARTIS-2.44.apk) · [发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.44) · [新手安装教程](#第一次用按这个顺序来)
+[下载最新版 2.59](https://github.com/FredZ6/CARTIS/releases/download/v2.59/CARTIS-2.59.apk) · [发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.59) · [新手安装教程](#第一次用按这个顺序来)
 
 **百度网盘下载（2.27 历史镜像）**：[CARTIS 2.27 安装包](https://pan.baidu.com/s/1CThKm8nin5pcrfILlXYy9Q?pwd=6tfk)，提取码：`6tfk`。
 
@@ -41,6 +41,7 @@ CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为�
 
 ## 目录
 
+- [2.59 我的收藏室](#259-我的收藏室)
 - [软件介绍](#cartis-是什么)
 - [2.0 已完成的改动](#相较原版-socket20-已完成哪些改动)
 - [性能实测对比](#性能改进以测试记录为准)
@@ -60,6 +61,18 @@ CARTIS 将这两种理念融为一体：**让每一张游戏卡带，都成为�
 - [仓库改名与旧链接](#仓库名称与旧链接)
 
 ---
+
+## 2.59 我的收藏室
+
+从 **设置 → 收藏室** 进入。可编辑昵称、收藏寄语和头像，并查看收藏数、通关数和累计游玩时间。
+
+- **个人展示**：搜索并选出三款「镇馆之宝」，以对应平台的 3D 卡带或光盘展示。绿色星标表示在玩，紫色表示暂时搁置，金色表示已通关。
+- **全部收藏**：先浏览已添加的 3D 主机。按 A 进入平台，查看游戏卡带或光盘的正面，并可按本平台合集或全平台合集筛选。按 B 回到原平台卡片，连续翻页时焦点留在分页按钮。
+- **通关纪念**：搜索游戏并添加通关日期、回忆及截图。游戏选择页按 X 查看时，累计游玩时间位于「显示名称」右侧。
+
+2.59 已在 KPB 上安装并确认启动，110 项自动检查通过。NDS 收藏室主机预览已重新居中，NDS 和 3DS 游戏轮播按画面比例调整卡带间距。
+
+[下载 CARTIS-2.59.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.59/CARTIS-2.59.apk) · [完整发布说明](https://github.com/FredZ6/CARTIS/releases/tag/v2.59) · [SHA-256 校验文件](https://github.com/FredZ6/CARTIS/releases/download/v2.59/SHA256SUMS.txt)
 
 ## 2.44 模型位置与展示模式修复
 
@@ -227,7 +240,7 @@ CARTIS 是“挑选和打开游戏的桌面”。真正运行游戏的是模拟�
 
 ## 第一步：安装 CARTIS
 
-1. [下载 CARTIS-2.44.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.44/CARTIS-2.44.apk)，也可以从 [最新版发布页](https://github.com/FredZ6/CARTIS/releases/latest) 的 **Assets（资源）** 下载 APK。已安装的 CARTIS 用户也可以在 **设置 → 关于 → 检查更新** 中升级。
+1. [下载 CARTIS-2.59.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.59/CARTIS-2.59.apk)，也可以从 [最新版发布页](https://github.com/FredZ6/CARTIS/releases/latest) 的 **Assets（资源）** 下载 APK。已安装的 CARTIS 用户也可以在 **设置 → 关于 → 检查更新** 中升级。
 2. 打开 APK 安装。已有用户可直接覆盖安装以保留配置和存档。2 GB 设备请先阅读上方的内存说明。
 3. 在掌机的文件管理器里找到 APK，点开安装。如果安卓询问是否允许安装，按提示允许。
 4. 已经装过 CARTIS 的用户，直接覆盖安装即可。**不要先卸载，也不要点“清除数据”**，以免丢失配置。

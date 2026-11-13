@@ -4,7 +4,7 @@
 
 ![CARTIS — A Portal to Every Game Era](docs/images/cartis-cover.png)
 
-# CARTIS 2.44
+# CARTIS 2.59
 
 **A Portal to Every Game Era**
 
@@ -18,7 +18,7 @@ CARTIS brings these ideas together: **every cartridge becomes a doorway to anoth
 
 CARTIS organizes, displays and launches your games. Separate emulators run them. **The APK does not include games, BIOS files, emulators or RetroArch cores.**
 
-[Download 2.44](https://github.com/FredZ6/CARTIS/releases/download/v2.44/CARTIS-2.44.apk) · [Release notes](https://github.com/FredZ6/CARTIS/releases/tag/v2.44) · [Getting started](#first-time-start-here)
+[Download 2.59](https://github.com/FredZ6/CARTIS/releases/download/v2.59/CARTIS-2.59.apk) · [Release notes](https://github.com/FredZ6/CARTIS/releases/tag/v2.59) · [Getting started](#first-time-start-here)
 
 **Baidu Netdisk mirror (archived 2.27):** [CARTIS 2.27 APK](https://pan.baidu.com/s/1CThKm8nin5pcrfILlXYy9Q?pwd=6tfk), extraction code: `6tfk`.
 
@@ -32,6 +32,7 @@ CARTIS organizes, displays and launches your games. Separate emulators run them.
 
 ## Contents
 
+- [2.59 My Collection Room](#259-my-collection-room)
 - [What is CARTIS?](#what-is-cartis)
 - [Features already delivered in the 2.x series](#features-already-delivered-in-the-2x-series)
 - [Performance results and test scope](#performance-results-and-test-scope)
@@ -49,6 +50,18 @@ CARTIS organizes, displays and launches your games. Separate emulators run them.
 - [Repository rename and old links](#repository-rename-and-old-links)
 
 ---
+
+## 2.59 My Collection Room
+
+Open **Settings → Collection Room** to edit your nickname, collection motto and avatar, and see your library totals, completed games and playtime.
+
+- **Showcase** lets you search for up to three featured games and display their 3D cartridges or discs. Green stars indicate games in progress, purple stars indicate games on hold, and gold stars indicate completed games.
+- **All Games** opens on a grid of your configured platforms with 3D console models. Press A to browse a platform's cartridges or discs and filter by platform or cross-platform collections. Press B to return to the same platform card. The page button keeps focus as you turn pages.
+- **Completion Memories** lets you search for a game and record the completion date, a note and a screenshot. Press X in the game carousel to see playtime alongside the display name.
+
+Version 2.59 was installed and launched on KPB, and 110 automated checks passed. The NDS console preview is centered in the Collection Room, and the NDS and 3DS game carousels adjust cartridge spacing to the screen aspect ratio.
+
+[Download CARTIS-2.59.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.59/CARTIS-2.59.apk) · [Full release notes](https://github.com/FredZ6/CARTIS/releases/tag/v2.59) · [SHA-256 checksums](https://github.com/FredZ6/CARTIS/releases/download/v2.59/SHA256SUMS.txt)
 
 ## 2.44 console positioning and showcase fixes
 
@@ -215,7 +228,7 @@ CARTIS is the interface for choosing and launching games. The emulators run them
 
 ## Step 1: Install CARTIS
 
-1. [Download CARTIS-2.44.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.44/CARTIS-2.44.apk) or choose the APK under **Assets** on the [latest release page](https://github.com/FredZ6/CARTIS/releases/latest). Existing CARTIS users can also upgrade from **Settings → About → Check for Updates**.
+1. [Download CARTIS-2.59.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.59/CARTIS-2.59.apk) or choose the APK under **Assets** on the [latest release page](https://github.com/FredZ6/CARTIS/releases/latest). Existing CARTIS users can also upgrade from **Settings → About → Check for Updates**.
 2. Open the APK to install it. Existing users can upgrade in place to keep their settings and saves. On a 2 GB device, read the memory notes above before installing.
 3. Open the APK in the handheld's file manager. If Android asks for permission to install apps, follow its prompts.
 4. Existing users should install over the previous version. **Do not uninstall or clear app data first**, or you may lose your configuration.
