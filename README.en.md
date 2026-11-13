@@ -4,7 +4,7 @@
 
 ![CARTIS — A Portal to Every Game Era](docs/images/cartis-cover.png)
 
-# CARTIS 2.59
+# CARTIS 2.63
 
 **A Portal to Every Game Era**
 
@@ -18,7 +18,7 @@ CARTIS brings these ideas together: **every cartridge becomes a doorway to anoth
 
 CARTIS organizes, displays and launches your games. Separate emulators run them. **The APK does not include games, BIOS files, emulators or RetroArch cores.**
 
-[Download 2.59](https://github.com/FredZ6/CARTIS/releases/download/v2.59/CARTIS-2.59.apk) · [Release notes](https://github.com/FredZ6/CARTIS/releases/tag/v2.59) · [Getting started](#first-time-start-here)
+[Download 2.63](https://github.com/FredZ6/CARTIS/releases/download/v2.63/CARTIS-2.63.apk) · [Release notes](https://github.com/FredZ6/CARTIS/releases/tag/v2.63) · [Getting started](#first-time-start-here)
 
 **Baidu Netdisk mirror (archived 2.27):** [CARTIS 2.27 APK](https://pan.baidu.com/s/1CThKm8nin5pcrfILlXYy9Q?pwd=6tfk), extraction code: `6tfk`.
 
@@ -32,10 +32,10 @@ CARTIS organizes, displays and launches your games. Separate emulators run them.
 
 ## Contents
 
-- [2.59 My Collection Room](#259-my-collection-room)
+- [2.63 My Collection Room](#263-my-collection-room)
 - [What is CARTIS?](#what-is-cartis)
 - [Features already delivered in the 2.x series](#features-already-delivered-in-the-2x-series)
-- [Performance results and test scope](#performance-results-and-test-scope)
+- [Performance results and test scope](docs/performance/README.en.md)
 - [KPB on-device gallery](#kpb-on-device-gallery)
 - [Before installing or upgrading](#before-installing-or-upgrading)
 - [Origins and credits](#origins-and-credits)
@@ -51,7 +51,7 @@ CARTIS organizes, displays and launches your games. Separate emulators run them.
 
 ---
 
-## 2.59 My Collection Room
+## 2.63 My Collection Room
 
 Open **Settings → Collection Room** to edit your nickname, collection motto and avatar, and see your library totals, completed games and playtime.
 
@@ -59,9 +59,11 @@ Open **Settings → Collection Room** to edit your nickname, collection motto an
 - **All Games** opens on a grid of your configured platforms with 3D console models. Press A to browse a platform's cartridges or discs and filter by platform or cross-platform collections. Press B to return to the same platform card. The page button keeps focus as you turn pages.
 - **Completion Memories** lets you search for a game and record the completion date, a note and a screenshot. Press X in the game carousel to see playtime alongside the display name.
 
-Version 2.59 was installed and launched on KPB, and 110 automated checks passed. The NDS console preview is centered in the Collection Room, and the NDS and 3DS game carousels adjust cartridge spacing to the screen aspect ratio.
+**New in 2.63:** the platform grid uses larger 3D console models and open previews. Platform game grids use the same open layout and matching page buttons. GBA cartridges share the game carousel’s lighting, reflections and perspective, and use the shell colour and material selected in game details.
 
-[Download CARTIS-2.59.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.59/CARTIS-2.59.apk) · [Full release notes](https://github.com/FredZ6/CARTIS/releases/tag/v2.59) · [SHA-256 checksums](https://github.com/FredZ6/CARTIS/releases/download/v2.59/SHA256SUMS.txt)
+KPB testing covered light and dark themes, GBA pagination, and colour changes made in game details and then checked in the Collection Room. All 110 automated checks passed.
+
+[Download CARTIS-2.63.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.63/CARTIS-2.63.apk) · [Full release notes](https://github.com/FredZ6/CARTIS/releases/tag/v2.63) · [SHA-256 checksums](https://github.com/FredZ6/CARTIS/releases/download/v2.63/SHA256SUMS.txt)
 
 ## 2.44 console positioning and showcase fixes
 
@@ -86,7 +88,7 @@ The **CARTIS 2.28 (versionCode 28)** release was packaged as **`CARTIS-2.28.apk`
 
 ## 2.27 feature foundation: cross-platform collections, consistent menus and faster page opening
 
-The previous official release is **CARTIS 2.27 (versionCode 27)**, packaged as **`CARTIS-2.27.apk`**. It builds on 2.26, incorporates the 2.25 colour fixes, and has passed KPB feature, interface and input-response regression checks. This complete release has not been retested on KPA or other devices. It keeps the original package name and signing certificate, so you can upgrade in place and retain your configuration. Do not uninstall the previous version or clear its data first.
+The **CARTIS 2.27 (versionCode 27)**, release was packaged as **`CARTIS-2.27.apk`**. It builds on 2.26, incorporates the 2.25 colour fixes, and has passed KPB feature, interface and input-response regression checks. This complete release has not been retested on KPA or other devices. It keeps the original package name and signing certificate, so you can upgrade in place and retain your configuration. Do not uninstall the previous version or clear its data first.
 
 - **Search every platform and jump to the cartridge:** search covers all added platforms. Tap a result or press A to select that game's platform and cartridge without launching it. You can then favourite it or change its appearance.
 - **Local and global collection pages:** Select opens collections for the current platform by default. Use L/R to switch pages. A global collection can contain games from different platforms; global favourites and recently played views also span platforms.
@@ -98,22 +100,6 @@ The previous official release is **CARTIS 2.27 (versionCode 27)**, packaged as *
 - **Earlier improvements remain:** custom key bindings and platform shortcuts, font switching, the transparent icon, the About-page illustration, launching without core-folder authorization, model zoom fixes and previously verified performance improvements are retained.
 
 [Download CARTIS-2.27.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.27/CARTIS-2.27.apk) · [Full release notes](https://github.com/FredZ6/CARTIS/releases/tag/v2.27) · [SHA-256 checksums](https://github.com/FredZ6/CARTIS/releases/download/v2.27/SHA256SUMS.txt)
-
-### Input-response comparison with 2.23
-
-Both versions were tested on the same KPB, with the same configuration, dark mode and a 504-game GBA library. Each version ran 16 paths × 6 trials; all 192 transitions succeeded. The table shows the median of the last five trials for **input event to the target page's first rendered frame**. These measurements are not emulator startup times or frame-rate results.
-
-| Action | 2.23 | 2.27 | Wait reduction |
-| --- | ---: | ---: | ---: |
-| Select: open collections | 707.1 ms | 337.5 ms | 52.3% |
-| X: open game details | 310.9 ms | 108.9 ms | 65.0% |
-| Start: open search | 362.2 ms | 199.9 ms | 44.8% |
-| Y: open settings | 398.6 ms | 223.3 ms | 44.0% |
-| X: second details layer | 362.3 ms | 179.8 ms | 50.4% |
-
-Median differences on the other 11 paths were below one 60 Hz frame (16.7 ms); this small sample does not establish a consistent change on those paths. First-trial results, observed ranges, test order and limitations are documented in the [complete 16-path report, in Chinese](docs/reports/2026-10-29-key-latency.md). Download the [PDF report](https://github.com/FredZ6/CARTIS/releases/download/v2.27/CARTIS-2.23-vs-2.27-latency-report.pdf) or [raw data package](https://github.com/FredZ6/CARTIS/releases/download/v2.27/CARTIS-2.23-vs-2.27-latency-data.zip).
-
-Additional checks passed: 126 feature assertions, 36 light/dark footer checks, 8 model/application-page checks, 16 red/green button-colour checks, 60 theme checks and 24 collection-storage checks. Earlier technical records are available in the [key-binding regression report](docs/reports/2026-10-28-keybindings.md) and [platform zoom-fix report](docs/reports/2026-10-27-camera-zoom-fix.md), both in Chinese.
 
 ## Features already delivered in the 2.x series
 
@@ -132,24 +118,7 @@ The following features are implemented. CARTIS 2.x continues to receive maintena
 - **CARTIS visual identity and settings:** a transparent pixel-art police-box icon, adaptive pixel loading screen, actual loading progress, consistent key-binding settings and an illustrated About page.
 - **Cleaner game details:** pressing X temporarily hides the underlying game-name badge and inactive Select collection hint; B restores them when returning to cartridge selection.
 - **Dark mode:** use the settings sidebar's sun/moon control. Ordinary footer buttons match the game-name button, while red and green action colours are preserved.
-- **Performance work:** batch-rendered dot backgrounds and cached library traversal reduce repeated work during navigation while retaining transparent cartridges, cover clarity and eight-console model caching. Results are scoped below.
-
-### Performance results and test scope
-
-See the [KPB performance comparison report](docs/reports/2026-10-27-kpb-performance.md), in Chinese.
-
-| Scenario / metric | Before | After | Test scope |
-| --- | --- | --- | --- |
-| KPB console model enlarged and continuously rotated | 45.66–46.28 FPS | 57.40–57.50 FPS | Alternating A/B runs with the same action; batched dot-background rendering |
-| KPB GBA cartridge left/right switching | 36.45–36.61 FPS | 39.07–39.30 FPS | A/B tests through the same actual input-dispatch path |
-| P95 frame interval during the GBA switching test | About 82.64 ms | About 49.56 ms | Reduced long-frame interval, not average frame time |
-| Draw calls in the enlarged-console scene | About 1,562 | About 111 | Fewer calls per frame after batching the background |
-| Mean cold startup across three earlier runs | 17.40 s | 17.03 s | Same-method 2026-10-25 report; about 2.1% improvement |
-| Eight-model cache preparation in that earlier test | 21.13 s | 20.24 s | Earlier build; about 4.2% improvement, not first-screen waiting time |
-
-A separate stable build without diagnostic probes measured **41.19 FPS** while stationary on the GBA cartridge page and **39.34 FPS** during left/right switching. A 30-second switching sample recorded no frames above 100 ms. Different pages and actions must be compared separately: a console-model scene approaching 60 FPS does not mean every scene runs at a stable 60 FPS.
-
-**Memory, power use and warm startup:** eight-model caching is retained. There is no complete comparable dataset for memory, power consumption or warm startup in this round, so no reduction percentage is claimed. In particular, the project does not claim a 50% reduction in cold or warm startup. Earlier records: [background memory and resume testing](docs/reports/2026-10-25-background-model-cache.md) and [cold-start testing](docs/reports/2026-10-25-startup-optimization.md), in Chinese.
+- **Performance work:** batch-rendered dot backgrounds and cached library traversal reduce repeated work during navigation while retaining transparent cartridges, cover clarity and eight-console model caching.
 
 ## KPB on-device gallery
 
@@ -175,7 +144,7 @@ These are screenshots from a KPB. The [complete gallery contains 27 screenshots]
 ## Before installing or upgrading
 
 - **Existing Socket BBM / Replay / CARTIS users:** this APK keeps the original package name and signing certificate. Upgrade in place; do not uninstall or clear app data. Back up your configuration and saves before upgrading.
-- **KPB 3 GB:** the main tested device. At a previously verified stable checkpoint with the existing quality settings, the stationary GBA cartridge page measured about **41.19 FPS**, and switching measured about **39.34 FPS**. Results vary by scene, device state and library; these are **not stable 60 FPS** claims.
+- **KPB 3 GB:** the main device used for on-device testing. [KPB performance reports](docs/performance/README.en.md).
 - **KPA:** previous releases were checked at 960×640. Testing 2.44 on a physical KPA is still pending. Other displays use adaptive layouts and may need adjustments.
 - **KPB 2 GB:** not tested on a physical device for this release. Caching eight models uses substantial memory; High Frame Rate is not a low-memory mode. Back up first and choose your version carefully.
 - **Quality options:** High Detail and High Frame Rate can be selected separately. Emulator compatibility and in-game frame rates depend on the chosen emulator, core and device.
@@ -228,7 +197,7 @@ CARTIS is the interface for choosing and launching games. The emulators run them
 
 ## Step 1: Install CARTIS
 
-1. [Download CARTIS-2.59.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.59/CARTIS-2.59.apk) or choose the APK under **Assets** on the [latest release page](https://github.com/FredZ6/CARTIS/releases/latest). Existing CARTIS users can also upgrade from **Settings → About → Check for Updates**.
+1. [Download CARTIS-2.63.apk](https://github.com/FredZ6/CARTIS/releases/download/v2.63/CARTIS-2.63.apk) or choose the APK under **Assets** on the [latest release page](https://github.com/FredZ6/CARTIS/releases/latest). Existing CARTIS users can also upgrade from **Settings → About → Check for Updates**.
 2. Open the APK to install it. Existing users can upgrade in place to keep their settings and saves. On a 2 GB device, read the memory notes above before installing.
 3. Open the APK in the handheld's file manager. If Android asks for permission to install apps, follow its prompts.
 4. Existing users should install over the previous version. **Do not uninstall or clear app data first**, or you may lose your configuration.
